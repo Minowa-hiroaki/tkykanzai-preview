@@ -1,0 +1,7 @@
+# robots.txt for www.tkykanzai.co.jp
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.tkykanzai.co.jp/sitemap.xml

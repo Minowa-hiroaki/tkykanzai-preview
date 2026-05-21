@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N2HSCQS');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TK Lab | 東京管材の社内システム開発と生成AI活用</title>
+<meta name="description" content="東京管材の社内システム開発の取り組み「TK Lab」。生成AIを駆使し、Claude、Gemini、ChatGPTを並列活用。配車最適化システム、AI OCRによる注文書のデータ化、業務自動化を推進しています。">
+<meta name="keywords" content="TK Lab,東京管材,AI,生成AI,Claude,Gemini,ChatGPT,DX,業務システム,配車最適化,AI OCR,商社,自社開発">
+<meta name="author" content="東京管材株式会社">
+<link rel="canonical" href="https://www.tkykanzai.co.jp/tklab.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="東京管材株式会社">
+<meta property="og:title" content="TK Lab | 東京管材の社内システム開発と生成AI活用">
+<meta property="og:description" content="生成AIを駆使した自社開発の業務システム。Claude・Gemini・ChatGPTを並列で活用し、ものづくり商社のDXを推進。">
+<meta property="og:url" content="https://www.tkykanzai.co.jp/tklab.html">
+<meta property="og:image" content="https://www.tkykanzai.co.jp/assets/og/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TK Lab | 東京管材の社内システム開発と生成AI活用">
+<meta name="twitter:description" content="生成AIを駆使した自社開発の業務システム。Claude・Gemini・ChatGPTを並列で活用し、ものづくり商社のDXを推進。">
+<meta name="twitter:image" content="https://www.tkykanzai.co.jp/assets/og/og-default.jpg">
+
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon/favicon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1eb446">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f5f2;
+    --bg-2:#ffffff;
+    --bg-3:#eeeae3;
+    --ink:#0a0e1a;
+    --ink-2:#1d2331;
+    --ink-3:#4a5161;
+    --ink-soft:#7c8398;
+    --line:#e0dcd3;
+    --line-2:#d4cfc4;
+    --accent:#1a3a8f;
+    --accent-bright:#3158d4;
+    --cyan:#00b8d4;
+    --cyan-soft:#7fd9e8;
+    --gold:#a07a2c;
+    --warm:#c9612e;
+    --green:#22c55e;
+    --red:#ef4444;
+    --sans:'Manrope', system-ui, sans-serif;
+    --display:'DM Serif Display', serif;
+    --jp:'Shippori Mincho', serif;
+    --mono:'JetBrains Mono', monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);background:var(--ink);color:#fff;
+    line-height:2.0;font-weight:400;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+    
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  /* ===== HEADER ===== */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:18px 40px;display:flex;justify-content:space-between;align-items:center;
+    background:rgba(10,14,26,.78);
+    backdrop-filter:blur(18px) saturate(140%);
+    -webkit-backdrop-filter:blur(18px) saturate(140%);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .brand{display:flex;align-items:center;gap:14px;height:38px}
+  .brand-logo{height:38px;width:auto;display:block}
+  nav ul{list-style:none;display:flex;gap:30px;align-items:center}
+  nav a{font-size:13px;font-weight:600;color:rgba(255,255,255,.85);position:relative;padding:6px 0;transition:color .25s}
+  nav a:hover{color:var(--cyan-soft)}
+  nav a.active{color:var(--cyan-soft)}
+  nav a.active::after{
+    content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--cyan);
+  }
+  nav .nav-cta{
+    background:var(--cyan);color:var(--ink);padding:10px 18px;border-radius:999px;
+    font-size:12px;letter-spacing:.03em;
+  }
+  nav .nav-cta:hover{background:var(--cyan-soft)}
+  nav .nav-cta.active::after{display:none}
+  .menu-btn{display:none;background:none;border:0;font-size:22px;cursor:pointer;color:#fff}
+
+  /* ===== PAGE HERO ===== */
+  .page-hero{
+    padding:160px 40px 100px;
+    background:var(--ink);
+    position:relative;overflow:hidden;
+  }
+  .page-hero-video{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;z-index:0;opacity:.4;
+    pointer-events:none;
+  }
+  .page-hero::before{
+    content:"";position:absolute;inset:0;z-index:1;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(0,184,212,.18), transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(49,88,212,.2), transparent 50%),
+      linear-gradient(180deg, rgba(10,14,26,.35) 0%, rgba(10,14,26,.7) 100%);
+    pointer-events:none;
+  }
+  .page-hero::after{
+    content:"";position:absolute;inset:0;z-index:1;
+    background-image:
+      linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size:60px 60px;
+    mask-image:radial-gradient(ellipse at center, black 20%, transparent 80%);
+    pointer-events:none;
+  }
+  .page-hero-inner{
+    position:relative;z-index:2;max-width:1320px;margin:0 auto;
+  }
+  .breadcrumb{
+    font-family:var(--mono);font-size:13px;color:var(--cyan-soft);
+    letter-spacing:.05em;margin-bottom:24px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .breadcrumb a:hover{color:#fff}
+  .breadcrumb .sep{opacity:.5}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:8px 16px;border-radius:999px;
+    background:rgba(0,184,212,.12);
+    border:1px solid rgba(0,184,212,.4);
+    color:var(--cyan-soft);font-size:12px;font-weight:600;letter-spacing:.04em;
+    margin-bottom:32px;
+  }
+  .hero-tag .dot{
+    width:7px;height:7px;border-radius:50%;background:var(--cyan);
+    box-shadow:0 0 0 0 var(--cyan);animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(0,184,212,.6)}
+    70%{box-shadow:0 0 0 10px rgba(0,184,212,0)}
+    100%{box-shadow:0 0 0 0 rgba(0,184,212,0)}
+  }
+  .page-title{
+    font-family:var(--jp);font-weight:700;
+    font-size:clamp(48px,7.5vw,108px);line-height:1.25;letter-spacing:-.02em;
+    margin-bottom:18px;
+  }
+  .page-title .grad{
+    background:linear-gradient(120deg, var(--cyan-soft) 0%, var(--cyan) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .page-title-en{
+    font-family:var(--display);font-style:italic;font-size:clamp(20px,2.4vw,32px);
+    color:var(--cyan-soft);margin-bottom:36px;font-weight:400;
+  }
+  .page-lead{
+    font-size:17px;line-height:1.95;color:rgba(255,255,255,.72);max-width:780px;
+  }
+  .page-lead strong{color:#fff;font-weight:700}
+
+  /* ===== SECTION GENERAL ===== */
+  section{padding:120px 40px;position:relative}
+  .container{max-width:1320px;margin:0 auto}
+  .sec-eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--mono);font-size:13px;color:var(--cyan-soft);
+    letter-spacing:.1em;font-weight:500;margin-bottom:24px;
+  }
+  .sec-eyebrow::before{content:"";width:24px;height:1px;background:var(--cyan-soft)}
+  .sec-title{
+    font-family:var(--jp);font-weight:700;
+    font-size:clamp(30px,4vw,52px);line-height:1.45;letter-spacing:-.01em;margin-bottom:24px;
+    color:#fff;
+  }
+  .sec-lead{font-size:16px;line-height:1.95;color:rgba(255,255,255,.72);max-width:760px}
+  .sec-lead strong{color:#fff;font-weight:700}
+
+  /* ===== LAYERS (3 levels of AI) ===== */
+  .layers{
+    background:linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+  }
+  .layers-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;
+  }
+  .layer-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;padding:36px 32px;
+    position:relative;overflow:hidden;
+    transition:all .35s ease;
+  }
+  .layer-card:hover{
+    background:rgba(255,255,255,.07);
+    transform:translateY(-3px);
+  }
+  .layer-card.l1{border-color:rgba(0,184,212,.3)}
+  .layer-card.l2{border-color:rgba(49,88,212,.4);background:rgba(49,88,212,.06)}
+  .layer-card.l3{border-color:rgba(160,122,44,.3)}
+  .layer-card .level{
+    font-family:var(--mono);font-size:11px;letter-spacing:.18em;font-weight:600;margin-bottom:18px;
+  }
+  .layer-card.l1 .level{color:var(--cyan-soft)}
+  .layer-card.l2 .level{color:#a8c0ff}
+  .layer-card.l3 .level{color:#d4b673}
+  .layer-card h3{
+    font-family:var(--jp);font-size:22px;font-weight:700;line-height:1.55;color:#fff;
+    margin-bottom:14px;letter-spacing:.01em;
+  }
+  .layer-card p{font-size:16px;line-height:2.0;color:rgba(255,255,255,.7);margin-bottom:18px}
+  .layer-card .examples{
+    margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);
+    display:flex;flex-direction:column;gap:6px;
+  }
+  .layer-card .examples li{
+    list-style:none;font-size:14px;color:rgba(255,255,255,.7);
+    padding-left:16px;position:relative;line-height:1.95;
+  }
+  .layer-card .examples li::before{
+    content:"→";position:absolute;left:0;font-weight:600;color:var(--cyan);
+  }
+  .layer-card.l3 .examples li::before{color:var(--gold)}
+
+  /* ===== APP DETAIL ===== */
+  .apps{background:var(--ink-2)}
+  .app-block{
+    margin-top:80px;padding-top:80px;border-top:1px solid rgba(255,255,255,.1);
+  }
+  .app-block:first-child{margin-top:0;padding-top:0;border-top:0}
+  .app-grid{
+    display:grid;grid-template-columns:1fr 1.3fr;gap:64px;align-items:center;
+  }
+  .app-grid.reverse{grid-template-columns:1.3fr 1fr}
+  .app-grid.reverse .app-text{order:2}
+  .app-grid.reverse .app-visual{order:1}
+  .app-text .num{
+    font-family:var(--display);font-size:90px;color:var(--cyan);
+    line-height:.9;letter-spacing:-.04em;margin-bottom:14px;
+    background:linear-gradient(180deg, var(--cyan) 0%, rgba(0,184,212,.4) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .app-text .status{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:7px 14px;border-radius:999px;
+    background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);
+    color:#86efac;font-family:var(--mono);font-size:11px;
+    letter-spacing:.1em;font-weight:600;margin-bottom:24px;
+  }
+  .app-text .status::before{
+    content:"";width:7px;height:7px;border-radius:50%;background:#22c55e;
+  }
+  .app-text .status.partner{
+    background:rgba(160,122,44,.15);border-color:rgba(160,122,44,.4);color:#d4b673;
+  }
+  .app-text .status.partner::before{background:#a07a2c}
+  .app-text h3{
+    font-family:var(--jp);font-size:clamp(28px,3.4vw,40px);font-weight:700;
+    line-height:1.3;letter-spacing:.01em;color:#fff;margin-bottom:8px;
+  }
+  .app-text .h3-sub{
+    font-family:var(--mono);font-size:13px;color:var(--cyan-soft);
+    letter-spacing:.1em;margin-bottom:24px;
+  }
+  .app-text .summary{
+    font-size:16px;line-height:1.95;color:rgba(255,255,255,.78);margin-bottom:24px;
+  }
+  .app-text .summary strong{color:#fff;font-weight:700}
+  .app-features{
+    display:flex;flex-direction:column;gap:18px;
+    padding:28px 0;border-top:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:24px;
+  }
+  .app-features li{
+    list-style:none;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:flex-start;
+    font-size:15.5px;color:rgba(255,255,255,.78);line-height:2.0;
+  }
+  .app-features li::before{
+    content:"";width:20px;height:20px;border-radius:50%;
+    background:rgba(0,184,212,.15);border:1px solid rgba(0,184,212,.4);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M2.5 6L5 8.5L9.5 3' stroke='%237fd9e8' fill='none' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-position:center;background-repeat:no-repeat;
+  }
+  .app-meta{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  }
+  .app-meta-item{
+    background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;padding:16px 18px;
+  }
+  .app-meta-item .label{
+    font-family:var(--mono);font-size:10px;color:var(--cyan-soft);letter-spacing:.15em;margin-bottom:6px;
+  }
+  .app-meta-item .value{
+    font-size:13px;color:#fff;font-weight:600;line-height:1.4;
+  }
+
+  /* App visual / Mockup */
+  .app-visual{position:relative}
+  .browser-frame{
+    background:#1f242c;border:1px solid rgba(255,255,255,.1);
+    border-radius:14px;overflow:hidden;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.5), 0 0 0 1px rgba(0,184,212,.05);
+  }
+  .browser-bar{
+    background:#171b22;padding:12px 16px;display:flex;align-items:center;gap:10px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .browser-dots{display:flex;gap:6px}
+  .browser-dots span{
+    width:11px;height:11px;border-radius:50%;background:#3a4048;
+  }
+  .browser-dots span:nth-child(1){background:#ff5f56}
+  .browser-dots span:nth-child(2){background:#ffbd2e}
+  .browser-dots span:nth-child(3){background:#27c93f}
+  .browser-url{
+    flex:1;background:#2a3038;border-radius:6px;padding:5px 12px;
+    font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.5);
+    display:flex;align-items:center;gap:8px;
+  }
+  .browser-url::before{
+    content:"";width:8px;height:8px;border-radius:50%;background:#22c55e;
+  }
+  .browser-content{
+    background:#fff;
+    aspect-ratio:16/10.5;
+    overflow:hidden;
+  }
+  .browser-content svg{width:100%;height:100%;display:block}
+
+  /* ===== ELECTRONIC DEPT (DENSAN) ===== */
+  .densan{
+    background:linear-gradient(180deg, var(--ink-2) 0%, var(--ink) 100%);
+    position:relative;overflow:hidden;
+  }
+  .densan-grid{
+    display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;
+  }
+  .densan-text .role-tags{
+    display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;
+  }
+  .role-tag{
+    padding:9px 16px;border-radius:999px;
+    background:rgba(0,184,212,.08);border:1px solid rgba(0,184,212,.3);
+    font-family:var(--mono);font-size:13px;color:var(--cyan-soft);
+    letter-spacing:.05em;font-weight:500;
+  }
+  .densan-card{
+    background:linear-gradient(135deg, rgba(0,184,212,.08) 0%, rgba(49,88,212,.08) 100%);
+    border:1px solid rgba(0,184,212,.3);border-radius:24px;
+    padding:48px 40px;position:relative;overflow:hidden;
+  }
+  .densan-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg, var(--cyan), var(--accent-bright));
+  }
+  .densan-card .label{font-family:var(--mono);font-size:11px;color:var(--cyan-soft);letter-spacing:.18em;margin-bottom:14px}
+  .densan-card .title{
+    font-family:var(--jp);font-size:28px;font-weight:700;color:#fff;line-height:1.55;margin-bottom:22px;letter-spacing:.02em;
+  }
+  .densan-card .num-display{
+    font-family:var(--display);font-size:64px;line-height:1;letter-spacing:-.02em;
+    background:linear-gradient(120deg, var(--cyan-soft), var(--cyan));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    margin-bottom:8px;
+  }
+  .densan-card .num-display .unit{
+    font-family:var(--sans);font-size:18px;color:var(--cyan-soft);font-weight:600;margin-left:6px;letter-spacing:0;
+  }
+  .densan-card .desc{font-size:14px;color:rgba(255,255,255,.7);line-height:1.85}
+
+  /* ===== PHILOSOPHY ===== */
+  .philosophy-tk{background:var(--ink)}
+  .philo-tk-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:56px;
+  }
+  .philo-card{
+    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;padding:40px 36px;transition:all .35s;
+  }
+  .philo-card:hover{
+    background:rgba(255,255,255,.06);border-color:rgba(0,184,212,.3);transform:translateY(-3px);
+  }
+  .philo-card .icon{
+    width:48px;height:48px;border-radius:12px;
+    background:rgba(0,184,212,.12);border:1px solid rgba(0,184,212,.3);
+    display:flex;align-items:center;justify-content:center;margin-bottom:24px;
+  }
+  .philo-card .icon svg{width:22px;height:22px;stroke:var(--cyan-soft);fill:none;stroke-width:1.6}
+  .philo-card h4{
+    font-family:var(--jp);font-size:21px;font-weight:700;line-height:1.55;color:#fff;
+    margin-bottom:14px;letter-spacing:.01em;
+  }
+  .philo-card p{font-size:16px;line-height:2.0;color:rgba(255,255,255,.7)}
+
+  /* ===== CTA ===== */
+  .cta{
+    background:linear-gradient(135deg, var(--ink) 0%, var(--accent) 100%);
+    color:#fff;text-align:center;padding:120px 40px;
+    position:relative;overflow:hidden;
+  }
+  .cta::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(0,184,212,.2), transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(127,217,232,.15), transparent 50%);
+  }
+  .cta .container{position:relative;z-index:2}
+  .cta h2{
+    font-family:var(--jp);font-weight:700;
+    font-size:clamp(32px,5vw,60px);line-height:1.45;margin-bottom:24px;color:#fff;
+  }
+  .cta p{
+    font-size:16px;color:rgba(255,255,255,.78);margin-bottom:36px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.95;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:16px 28px;font-size:14px;font-weight:600;
+    border-radius:999px;transition:all .3s cubic-bezier(.2,.8,.2,1);
+    cursor:pointer;border:1px solid transparent;
+  }
+  .btn-primary{background:var(--cyan);color:var(--ink)}
+  .btn-primary:hover{background:var(--cyan-soft);transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(0,184,212,.5)}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.05)}
+  .btn .arrow{transition:transform .3s}
+  .btn:hover .arrow{transform:translateX(4px)}
+  .cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  /* ===== FOOTER ===== */
+  footer{background:#000;color:rgba(255,255,255,.6);padding:80px 40px 32px}
+  .foot-grid{
+    max-width:1320px;margin:0 auto;
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;
+    padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  .foot-brand{display:flex;flex-direction:column;gap:18px}
+  .foot-brand .top{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+  .foot-brand .brand-logo{height:42px;width:auto;display:block;flex-shrink:0}
+  .foot-brand .brand-logo-jp{height:18px;width:auto;display:block;opacity:.85;flex-shrink:1;min-width:0}
+  .foot-brand p{font-size:14.5px;line-height:2.0}
+  .foot-col h5{font-family:var(--mono);font-size:11px;color:var(--cyan-soft);letter-spacing:.15em;margin-bottom:18px}
+  .foot-col ul{list-style:none}
+  .foot-col li{margin-bottom:11px;font-size:14px}
+  .foot-col a:hover{color:var(--cyan-soft)}
+  .foot-bottom{
+    max-width:1320px;margin:28px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.4);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:1024px){
+    .layers-grid{grid-template-columns:1fr;gap:18px}
+    .app-grid,.app-grid.reverse{grid-template-columns:1fr;gap:48px}
+    .app-grid.reverse .app-text{order:1}
+    .app-grid.reverse .app-visual{order:2}
+    .app-text .num{font-size:64px}
+    .densan-grid{grid-template-columns:1fr;gap:48px}
+    .philo-tk-grid{grid-template-columns:1fr;gap:18px}
+  }
+  @media (max-width:880px){
+    header{padding:14px 20px}
+    nav ul{display:none}
+    .menu-btn{display:block}
+    .page-hero{padding:120px 20px 80px}
+    section{padding:80px 20px}
+    .page-title{font-size:48px}
+    .layer-card{padding:32px 28px}
+    .app-block{margin-top:60px;padding-top:60px}
+    .app-text h3{font-size:24px}
+    .app-meta{grid-template-columns:1fr;gap:10px}
+    .app-features li{font-size:13px}
+    .densan-card{padding:36px 28px}
+    .densan-card .num-display{font-size:48px}
+    .philo-card{padding:32px 28px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+    .cta{padding:80px 20px}
+  }
+  @media (max-width:480px){
+    .foot-grid{grid-template-columns:1fr}
+    .cta-buttons{flex-direction:column}
+    .btn{justify-content:center}
+  }
+
+  @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  .reveal{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+  .d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.32s}.d4{animation-delay:.46s}
+
+  /* Scroll-triggered reveal animations */
+  .fade-up,.auto-reveal{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+  .fade-up.is-visible,.auto-reveal.is-visible{opacity:1;transform:none}
+  .fade-up.delay-1,.auto-reveal.delay-1{transition-delay:.1s}
+  .fade-up.delay-2,.auto-reveal.delay-2{transition-delay:.2s}
+  .fade-up.delay-3,.auto-reveal.delay-3{transition-delay:.3s}
+  .fade-up.delay-4,.auto-reveal.delay-4{transition-delay:.4s}
+  .fade-up.delay-5,.auto-reveal.delay-5{transition-delay:.5s}
+  @media (prefers-reduced-motion:reduce){
+    .fade-up,.reveal,.auto-reveal{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}
+  }
+
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2HSCQS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<header>
+  <a href="index.html" class="brand">
+    <img class="brand-logo" src="assets/img/logo-shield-white.png" alt="東京管材 TOKYO KANZAI">
+  </a>
+  <nav>
+    <ul>
+      <li><a href="index.html#message">メッセージ</a></li>
+      <li><a href="index.html#philosophy">事業</a></li>
+      <li><a href="tklab.html" class="active">TK Lab</a></li>
+      <li><a href="index.html#vision">Vision</a></li>
+      <li><a href="company.html">会社概要</a></li>
+      <li><a href="careers.html">採用</a></li>
+      <li><a href="index.html#contact" class="nav-cta">お問い合わせ</a></li>
+    </ul>
+    <button class="menu-btn" aria-label="メニュー">≡</button>
+  </nav>
+</header>
+
+<!-- ============== PAGE HERO ============== -->
+<section class="page-hero">
+  <video class="page-hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture x-webkit-airplay="deny">
+    <source src="assets/video/tklab-intro.mp4" type="video/mp4">
+  </video>
+  <div class="page-hero-inner">
+    <div class="breadcrumb reveal d1">
+      <a href="index.html">HOME</a>
+      <span class="sep">/</span>
+      <span>TK LAB</span>
+    </div>
+    <div class="hero-tag reveal d1">
+      <span class="dot"></span>
+      <span>東京管材の社内システム開発の取り組み</span>
+    </div>
+    <h1 class="page-title reveal d2">
+      TK <span class="grad">Lab.</span>
+    </h1>
+    <div class="page-title-en reveal d2">Our In-House AI Initiative</div>
+    <p class="page-lead reveal d3">
+      TK Labは、東京管材が社内で進めるシステム開発・AI活用の取り組みです。<strong>生成AIを駆使し、私たち自身の手でアプリケーションを内製</strong>。70年蓄積した業務の知見をソフトウェアに翻訳しています。汎用ツールではなく、専門商社の現場に最適化された「自分たちのための道具」を自分たちで作り、自分たちで育てています。
+    </p>
+  </div>
+</section>
+
+<!-- ============== 3 LAYERS ============== -->
+<section class="layers" id="layers">
+  <div class="container">
+    <div class="sec-eyebrow">THREE LAYERS</div>
+    <h2 class="sec-title">3つのレイヤーで、<br>業務を変えています。</h2>
+    <p class="sec-lead">
+      東京管材のAI活用は、3つの層で進んでいます。「<strong>日常業務での生成AI</strong>」「<strong>自社内製の業務システム</strong>」「<strong>外部パートナーとの協業</strong>」。それぞれが補い合うことで、現場の生産性を抜本的に引き上げます。
+    </p>
+
+    <div class="layers-grid">
+      <div class="layer-card l1">
+        <div class="level">// LAYER 01</div>
+        <h3>日常業務での<br>生成AI活用</h3>
+        <p>
+          社員一人ひとりが、生成AIを日々の業務で活用しています。「ちょっとした作業」を効率化することが、組織全体の生産性向上につながります。
+        </p>
+        <ul class="examples">
+          <li>メール文面の作成支援</li>
+          <li>議事録の要約・整理</li>
+          <li>英文・中国語の翻訳</li>
+          <li>調査・情報収集</li>
+          <li>社内資料の作成支援</li>
+          <li>事務処理の効率化</li>
+        </ul>
+      </div>
+      <div class="layer-card l2">
+        <div class="level">// LAYER 02 — CORE</div>
+        <h3>自社内製の<br>業務システム</h3>
+        <p>
+          生成AIを駆使し、専門商社の現場に最適化されたWebアプリケーションを内製。電算室を中心に、現場の声を聞きながら作り、育てています。
+        </p>
+        <ul class="examples">
+          <li>内示管理システム</li>
+          <li>週次集計・自動化ツール</li>
+          <li>配車最適化システム</li>
+          <li>RPA（業務自動化）の構築</li>
+          <li>クラウド化の推進</li>
+        </ul>
+      </div>
+      <div class="layer-card l3">
+        <div class="level">// LAYER 03</div>
+        <h3>外部パートナー<br>との協業</h3>
+        <p>
+          自社で作るより外部パートナーと協業した方が早く・確実に導入できる領域は、外部の力を借ります。「内製と協業」を合理的に使い分けます。
+        </p>
+        <ul class="examples">
+          <li>AI OCR（注文書データ化）</li>
+          <li>基幹システムの維持・運用</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== APPS DETAIL ============== -->
+<section class="apps" id="apps">
+  <div class="container">
+    <div class="sec-eyebrow">APPS IN PRODUCTION</div>
+    <h2 class="sec-title">運用中のアプリ。</h2>
+    <p class="sec-lead">
+      東京管材の業務を実際に動かしているシステムを、ご紹介します。
+    </p>
+
+    <!-- ===== APP 1: 内示管理システム ===== -->
+    <div class="app-block">
+      <div class="app-grid">
+        <div class="app-text">
+          <div class="num">01</div>
+          <div class="status">運用中 / 自社内製</div>
+          <h3>内示管理システム</h3>
+          <div class="h3-sub">// FOR MAJOR CLIENT A — INTERNAL ERP</div>
+          <p class="summary">
+            大手取引先A社向けの内示データを一元管理する、<strong>自社開発の業務システム</strong>。発注から買取交渉、売上・利益分析、マスタ管理までを一画面で扱える、専門商社のためのERPです。
+          </p>
+          <ul class="app-features">
+            <li>ダッシュボードで内示状況をリアルタイム可視化。重要KPIを一目で把握</li>
+            <li>データ取込・発注管理・買取交渉・売上利益分析の機能を統合</li>
+            <li>マスタ管理機能で取引情報を一元化、入力ミスを削減</li>
+            <li>現場の業務フローに完全に合わせた、フルカスタム設計</li>
+          </ul>
+          <div class="app-meta">
+            <div class="app-meta-item">
+              <div class="label">// BUILT BY</div>
+              <div class="value">電算室<br>（生成AI活用）</div>
+            </div>
+            <div class="app-meta-item">
+              <div class="label">// USERS</div>
+              <div class="value">営業部<br>プロフィット事業部</div>
+            </div>
+            <div class="app-meta-item">
+              <div class="label">// IMPACT</div>
+              <div class="value">内示管理の<br>属人性を排除</div>
+            </div>
+          </div>
+        </div>
+        <div class="app-visual">
+          <div class="browser-frame">
+            <div class="browser-bar">
+              <div class="browser-dots"><span></span><span></span><span></span></div>
+              <div class="browser-url">tk-lab.internal / naiji-management</div>
+            </div>
+            <div class="browser-content">
+              <!-- Naiji Mockup -->
+              <svg viewBox="0 0 800 525" xmlns="http://www.w3.org/2000/svg">
+                <!-- Sidebar -->
+                <rect x="0" y="0" width="200" height="525" fill="#f8f9fa"/>
+                <text x="20" y="35" font-family="system-ui" font-size="13" font-weight="700" fill="#1d2331">📦 内示管理</text>
+                <line x1="16" y1="48" x2="184" y2="48" stroke="#e9ecef"/>
+                <!-- Menu items -->
+                <rect x="16" y="60" width="168" height="32" rx="6" fill="#1a3a8f"/>
+                <text x="28" y="80" font-family="system-ui" font-size="11" fill="#fff" font-weight="600">🏠 ダッシュボード</text>
+                <text x="28" y="112" font-family="system-ui" font-size="11" fill="#4a5161">📥 データ取込</text>
+                <text x="28" y="138" font-family="system-ui" font-size="11" fill="#4a5161">📦 発注管理</text>
+                <text x="28" y="164" font-family="system-ui" font-size="11" fill="#4a5161">🔴 買取交渉</text>
+                <text x="28" y="190" font-family="system-ui" font-size="11" fill="#4a5161">📊 売上・利益</text>
+                <text x="28" y="216" font-family="system-ui" font-size="11" fill="#4a5161">⚙️ マスタ管理</text>
+                <line x1="16" y1="465" x2="184" y2="465" stroke="#e9ecef"/>
+                <text x="20" y="485" font-family="system-ui" font-size="9" fill="#7c8398">東京管材株式会社</text>
+                <text x="20" y="500" font-family="system-ui" font-size="9" fill="#7c8398">取引先A社向け 内示管理</text>
+
+                <!-- Main content -->
+                <rect x="200" y="0" width="600" height="525" fill="#ffffff"/>
+                <text x="232" y="42" font-family="system-ui" font-size="20" font-weight="700" fill="#0a0e1a">ダッシュボード</text>
+                <text x="232" y="62" font-family="system-ui" font-size="11" fill="#7c8398">2026年4月度 内示状況</text>
+
+                <!-- KPI Cards -->
+                <g>
+                  <rect x="232" y="82" width="130" height="80" rx="8" fill="#f8f9fa" stroke="#e9ecef"/>
+                  <text x="244" y="102" font-family="system-ui" font-size="9" fill="#7c8398">今月内示総額</text>
+                  <text x="244" y="130" font-family="system-ui" font-size="22" font-weight="700" fill="#1a3a8f">¥248M</text>
+                  <text x="244" y="150" font-family="system-ui" font-size="9" fill="#22c55e">▲ 12% vs LM</text>
+                </g>
+                <g>
+                  <rect x="372" y="82" width="130" height="80" rx="8" fill="#f8f9fa" stroke="#e9ecef"/>
+                  <text x="384" y="102" font-family="system-ui" font-size="9" fill="#7c8398">未消化在庫</text>
+                  <text x="384" y="130" font-family="system-ui" font-size="22" font-weight="700" fill="#0a0e1a">42<tspan font-size="12" fill="#7c8398"> 件</tspan></text>
+                  <text x="384" y="150" font-family="system-ui" font-size="9" fill="#ef4444">要交渉 8件</text>
+                </g>
+                <g>
+                  <rect x="512" y="82" width="130" height="80" rx="8" fill="#f8f9fa" stroke="#e9ecef"/>
+                  <text x="524" y="102" font-family="system-ui" font-size="9" fill="#7c8398">納期遵守率</text>
+                  <text x="524" y="130" font-family="system-ui" font-size="22" font-weight="700" fill="#22c55e">98.7<tspan font-size="12" fill="#7c8398"> %</tspan></text>
+                  <text x="524" y="150" font-family="system-ui" font-size="9" fill="#22c55e">▲ 0.3pt</text>
+                </g>
+                <g>
+                  <rect x="652" y="82" width="130" height="80" rx="8" fill="#f8f9fa" stroke="#e9ecef"/>
+                  <text x="664" y="102" font-family="system-ui" font-size="9" fill="#7c8398">粗利率</text>
+                  <text x="664" y="130" font-family="system-ui" font-size="22" font-weight="700" fill="#0a0e1a">14.2<tspan font-size="12" fill="#7c8398"> %</tspan></text>
+                  <text x="664" y="150" font-family="system-ui" font-size="9" fill="#22c55e">▲ 0.5pt</text>
+                </g>
+
+                <!-- Chart area -->
+                <rect x="232" y="182" width="408" height="200" rx="8" fill="#f8f9fa" stroke="#e9ecef"/>
+                <text x="244" y="204" font-family="system-ui" font-size="11" font-weight="600" fill="#0a0e1a">月次内示推移</text>
+                <text x="244" y="218" font-family="system-ui" font-size="9" fill="#7c8398">直近6ヶ月</text>
+                <!-- Bars -->
+                <rect x="260" y="320" width="40" height="40" fill="#1a3a8f" opacity=".6"/>
+                <rect x="320" y="300" width="40" height="60" fill="#1a3a8f" opacity=".7"/>
+                <rect x="380" y="290" width="40" height="70" fill="#1a3a8f" opacity=".8"/>
+                <rect x="440" y="270" width="40" height="90" fill="#1a3a8f" opacity=".9"/>
+                <rect x="500" y="280" width="40" height="80" fill="#1a3a8f"/>
+                <rect x="560" y="250" width="40" height="110" fill="#00b8d4"/>
+                <line x1="244" y1="360" x2="624" y2="360" stroke="#dee2e6"/>
+                <text x="280" y="375" font-family="system-ui" font-size="8" fill="#7c8398">11月</text>
+                <text x="340" y="375" font-family="system-ui" font-size="8" fill="#7c8398">12月</text>
+                <text x="400" y="375" font-family="system-ui" font-size="8" fill="#7c8398">1月</text>
+                <text x="460" y="375" font-family="system-ui" font-size="8" fill="#7c8398">2月</text>
+                <text x="520" y="375" font-family="system-ui" font-size="8" fill="#7c8398">3月</text>
+                <text x="572" y="375" font-family="system-ui" font-size="8" fill="#0a0e1a" font-weight="700">4月</text>
+
+                <!-- Right alerts panel -->
+                <rect x="652" y="182" width="130" height="200" rx="8" fill="#f8f9fa" stroke="#e9ecef"/>
+                <text x="664" y="204" font-family="system-ui" font-size="11" font-weight="600" fill="#0a0e1a">要対応</text>
+                <rect x="664" y="218" width="106" height="32" rx="4" fill="#fef2f2" stroke="#fecaca"/>
+                <circle cx="676" cy="234" r="3" fill="#ef4444"/>
+                <text x="685" y="237" font-family="system-ui" font-size="9" fill="#0a0e1a">買取交渉 8件</text>
+                <rect x="664" y="258" width="106" height="32" rx="4" fill="#fffbeb" stroke="#fde68a"/>
+                <circle cx="676" cy="274" r="3" fill="#f59e0b"/>
+                <text x="685" y="277" font-family="system-ui" font-size="9" fill="#0a0e1a">納期遅延 2件</text>
+                <rect x="664" y="298" width="106" height="32" rx="4" fill="#f0fdf4" stroke="#bbf7d0"/>
+                <circle cx="676" cy="314" r="3" fill="#22c55e"/>
+                <text x="685" y="317" font-family="system-ui" font-size="9" fill="#0a0e1a">新規確定 18件</text>
+                <rect x="664" y="338" width="106" height="32" rx="4" fill="#eff6ff" stroke="#bfdbfe"/>
+                <circle cx="676" cy="354" r="3" fill="#3b82f6"/>
+                <text x="685" y="357" font-family="system-ui" font-size="9" fill="#0a0e1a">マスタ更新 5件</text>
+
+                <!-- Recent table -->
+                <text x="232" y="412" font-family="system-ui" font-size="11" font-weight="600" fill="#0a0e1a">最近の内示</text>
+                <rect x="232" y="422" width="550" height="80" rx="6" fill="#fafbfc" stroke="#e9ecef"/>
+                <line x1="232" y1="446" x2="782" y2="446" stroke="#e9ecef"/>
+                <text x="244" y="440" font-family="system-ui" font-size="9" fill="#7c8398" font-weight="600">品番</text>
+                <text x="380" y="440" font-family="system-ui" font-size="9" fill="#7c8398" font-weight="600">数量</text>
+                <text x="450" y="440" font-family="system-ui" font-size="9" fill="#7c8398" font-weight="600">納期</text>
+                <text x="540" y="440" font-family="system-ui" font-size="9" fill="#7c8398" font-weight="600">金額</text>
+                <text x="660" y="440" font-family="system-ui" font-size="9" fill="#7c8398" font-weight="600">状況</text>
+                <text x="244" y="466" font-family="monospace" font-size="9" fill="#0a0e1a">FK-2401-A</text>
+                <text x="380" y="466" font-family="system-ui" font-size="9" fill="#0a0e1a">320</text>
+                <text x="450" y="466" font-family="system-ui" font-size="9" fill="#0a0e1a">2026/05/15</text>
+                <text x="540" y="466" font-family="system-ui" font-size="9" fill="#0a0e1a">¥4,820,000</text>
+                <rect x="654" y="456" width="44" height="14" rx="7" fill="#dcfce7"/>
+                <text x="660" y="466" font-family="system-ui" font-size="8" fill="#15803d">確定</text>
+                <text x="244" y="486" font-family="monospace" font-size="9" fill="#0a0e1a">FK-2402-B</text>
+                <text x="380" y="486" font-family="system-ui" font-size="9" fill="#0a0e1a">160</text>
+                <text x="450" y="486" font-family="system-ui" font-size="9" fill="#0a0e1a">2026/05/22</text>
+                <text x="540" y="486" font-family="system-ui" font-size="9" fill="#0a0e1a">¥2,480,000</text>
+                <rect x="654" y="476" width="48" height="14" rx="7" fill="#fee2e2"/>
+                <text x="660" y="486" font-family="system-ui" font-size="8" fill="#b91c1c">要交渉</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== APP 2: 週次集計 ===== -->
+    <div class="app-block">
+      <div class="app-grid reverse">
+        <div class="app-visual">
+          <div class="browser-frame">
+            <div class="browser-bar">
+              <div class="browser-dots"><span></span><span></span><span></span></div>
+              <div class="browser-url">tk-lab.internal / sales-data-extractor</div>
+            </div>
+            <div class="browser-content">
+              <!-- Sales Extractor Mockup -->
+              <svg viewBox="0 0 800 525" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="800" height="525" fill="#ffffff"/>
+                <!-- Header -->
+                <text x="40" y="48" font-family="system-ui" font-size="20" font-weight="700" fill="#1a3a5c">📊 週次売上集計ツール</text>
+                <text x="40" y="68" font-family="system-ui" font-size="11" fill="#6b7b8d">社内売上データから週次データ（月曜〜当日）を抽出します</text>
+
+                <!-- Step 1 -->
+                <rect x="40" y="92" width="460" height="120" rx="8" fill="#fafbfc" stroke="#e9ecef" stroke-dasharray="4 2"/>
+                <text x="56" y="116" font-family="system-ui" font-size="12" font-weight="600" fill="#0a0e1a">① 社内売上データをアップロード</text>
+                <rect x="56" y="130" width="428" height="68" rx="6" fill="#fff" stroke="#dee2e6"/>
+                <circle cx="92" cy="164" r="14" fill="#eff6ff"/>
+                <path d="M 86 164 L 92 158 L 98 164 M 92 158 L 92 170" stroke="#3b82f6" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+                <text x="118" y="160" font-family="system-ui" font-size="11" fill="#0a0e1a" font-weight="600">sales_data_2026-04.xlsx</text>
+                <text x="118" y="178" font-family="system-ui" font-size="9" fill="#7c8398">2,847件のレコード</text>
+                <rect x="424" y="148" width="50" height="32" rx="6" fill="#22c55e"/>
+                <text x="434" y="168" font-family="system-ui" font-size="10" font-weight="600" fill="#fff">✓ OK</text>
+
+                <!-- Step 2 -->
+                <rect x="520" y="92" width="240" height="120" rx="8" fill="#fafbfc" stroke="#e9ecef" stroke-dasharray="4 2"/>
+                <text x="536" y="116" font-family="system-ui" font-size="12" font-weight="600" fill="#0a0e1a">② 取得日</text>
+                <rect x="536" y="130" width="208" height="38" rx="6" fill="#fff" stroke="#dee2e6"/>
+                <text x="548" y="154" font-family="monospace" font-size="12" fill="#0a0e1a">📅 2026/04/27</text>
+                <rect x="536" y="178" width="208" height="20" rx="4" fill="#eff6ff"/>
+                <text x="546" y="192" font-family="system-ui" font-size="9" fill="#1a3a8f">抽出: 4/20（月）〜 4/27</text>
+
+                <!-- Run button -->
+                <rect x="40" y="232" width="720" height="44" rx="8" fill="#2563eb"/>
+                <text x="370" y="259" font-family="system-ui" font-size="13" font-weight="600" fill="#fff">▶ 抽出実行</text>
+
+                <!-- Result -->
+                <rect x="40" y="296" width="720" height="60" rx="8" fill="#f0fdf4" stroke="#86efac"/>
+                <text x="58" y="320" font-family="system-ui" font-size="12" font-weight="600" fill="#15803d">✅ 抽出完了</text>
+                <text x="58" y="340" font-family="system-ui" font-size="10" fill="#15803d">期間: 2026/04/20（月）〜 2026/04/27 ／ 全2,847件 → フィルタ後 432件 ／ 取引先A: 248件 ／ 取引先B: 184件</text>
+
+                <!-- Download -->
+                <rect x="40" y="372" width="720" height="46" rx="8" fill="#1d4ed8"/>
+                <path d="M 380 388 L 380 400 M 374 394 L 380 400 L 386 394" stroke="#fff" fill="none" stroke-width="1.6" stroke-linecap="round"/>
+                <text x="395" y="402" font-family="system-ui" font-size="13" font-weight="600" fill="#fff">売上明細リスト_20260427.xlsx をダウンロード</text>
+
+                <!-- Tabs -->
+                <rect x="40" y="436" width="720" height="62" rx="6" fill="#fafbfc" stroke="#e9ecef"/>
+                <rect x="40" y="436" width="180" height="28" rx="6" fill="#fff" stroke="#e9ecef"/>
+                <text x="60" y="454" font-family="system-ui" font-size="11" font-weight="600" fill="#1a3a8f">取引先A (248件)</text>
+                <text x="240" y="454" font-family="system-ui" font-size="11" fill="#7c8398">取引先B (184件)</text>
+                <text x="60" y="478" font-family="monospace" font-size="9" fill="#0a0e1a">2026/04/22 ／ FK-2401-A ／ ﾌﾞﾗｹｯﾄ ／ 32 ／ A001 ／ ｻﾌﾟﾗｲﾔｰA</text>
+                <text x="60" y="492" font-family="monospace" font-size="9" fill="#0a0e1a">2026/04/23 ／ FK-2402-B ／ ﾊﾝｸﾞﾙﾐ ／ 16 ／ A002 ／ ｻﾌﾟﾗｲﾔｰB</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="app-text">
+          <div class="num">02</div>
+          <div class="status">運用中 / 自社内製</div>
+          <h3>週次集計・<br>自動化ツール</h3>
+          <div class="h3-sub">// SALES DATA EXTRACTOR</div>
+          <p class="summary">
+            特定取引先向けの週次売上明細を、ボタン一つで抽出・集計する自動化ツール。<strong>社内の売上データ</strong>から対象顧客のレコードを抜き出し、整形済みのExcelとして出力。これまで手作業で行っていた定型集計を、数秒で完結させます。
+          </p>
+          <ul class="app-features">
+            <li>社内売上データをアップロードするだけで処理完了</li>
+            <li>取引先別に整形・自動でシート分割、すぐに使えるExcel出力</li>
+            <li>これまで手作業で行っていた週次の定型業務を大幅に短縮</li>
+            <li>担当者の作業負担を軽減し、本来の営業活動に集中</li>
+          </ul>
+          <div class="app-meta">
+            <div class="app-meta-item">
+              <div class="label">// BUILT BY</div>
+              <div class="value">電算室<br>（生成AI活用）</div>
+            </div>
+            <div class="app-meta-item">
+              <div class="label">// USERS</div>
+              <div class="value">プロフィット<br>事業部</div>
+            </div>
+            <div class="app-meta-item">
+              <div class="label">// IMPACT</div>
+              <div class="value">週次定型業務<br>を大幅短縮</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== APP 3: AI OCR ===== -->
+    <div class="app-block">
+      <div class="app-grid">
+        <div class="app-text">
+          <div class="num">03</div>
+          <div class="status partner">運用中 / 外部パートナーと協業</div>
+          <h3>AI OCR<br>注文書データ化</h3>
+          <div class="h3-sub">// PARTNERED — PAPER TO STRUCTURED DATA</div>
+          <p class="summary">
+            紙やPDFで届く注文書を、AI OCRで瞬時にデータ化。<strong>手入力にかかっていた時間とミスをほぼゼロ</strong>にし、データ化された情報をそのまま社内システムや基幹系へ連携できる体制を構築。社内開発するより、信頼できる外部パートナーと協業する方が早く確実に導入できる領域として、合理的な判断で外部協業を選択しました。
+          </p>
+          <ul class="app-features">
+            <li>紙・PDF・FAXの注文書をAIで自動読取</li>
+            <li>品番・数量・納期などの項目を構造化されたデータに変換</li>
+            <li>手入力にかかっていた時間とミスを大幅削減</li>
+            <li>社内システムへのデータ連携を効率化</li>
+          </ul>
+          <div class="app-meta">
+            <div class="app-meta-item">
+              <div class="label">// PARTNERSHIP</div>
+              <div class="value">外部AI OCR<br>サービス</div>
+            </div>
+            <div class="app-meta-item">
+              <div class="label">// USERS</div>
+              <div class="value">営業部<br>プロフィット事業部</div>
+            </div>
+            <div class="app-meta-item">
+              <div class="label">// IMPACT</div>
+              <div class="value">手入力時間<br>を最小化</div>
+            </div>
+          </div>
+        </div>
+        <div class="app-visual">
+          <div class="browser-frame">
+            <div class="browser-bar">
+              <div class="browser-dots"><span></span><span></span><span></span></div>
+              <div class="browser-url">tk-lab.internal / ai-ocr-orders</div>
+            </div>
+            <div class="browser-content">
+              <!-- AI OCR Mockup -->
+              <svg viewBox="0 0 800 525" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="800" height="525" fill="#ffffff"/>
+                <!-- Header -->
+                <text x="40" y="42" font-family="system-ui" font-size="18" font-weight="700" fill="#0a0e1a">📄 AI OCR — 注文書データ化</text>
+                <text x="40" y="62" font-family="system-ui" font-size="11" fill="#7c8398">紙・PDF・FAX → 構造化データ</text>
+
+                <!-- Left: Source document -->
+                <rect x="40" y="86" width="340" height="400" rx="8" fill="#fafbfc" stroke="#e9ecef"/>
+                <text x="56" y="108" font-family="system-ui" font-size="11" font-weight="600" fill="#0a0e1a">入力：注文書 PDF</text>
+                <rect x="56" y="120" width="308" height="350" rx="4" fill="#fff" stroke="#dee2e6"/>
+
+                <!-- Mock paper order form -->
+                <text x="76" y="148" font-family="system-ui" font-size="14" font-weight="700" fill="#0a0e1a">発注書</text>
+                <text x="76" y="166" font-family="system-ui" font-size="9" fill="#7c8398">No. 2026-0427-128</text>
+                <line x1="76" y1="178" x2="344" y2="178" stroke="#0a0e1a"/>
+
+                <text x="76" y="200" font-family="system-ui" font-size="9" fill="#4a5161">発行日：2026年4月25日</text>
+                <text x="76" y="218" font-family="system-ui" font-size="9" fill="#4a5161">発注先：東京管材株式会社 御中</text>
+                <text x="76" y="236" font-family="system-ui" font-size="9" fill="#4a5161">発注者：取引先A社</text>
+
+                <!-- Highlight zones (AI detected) -->
+                <rect x="74" y="252" width="270" height="22" fill="#fef9c3" opacity=".6"/>
+                <rect x="74" y="278" width="270" height="22" fill="#fef9c3" opacity=".6"/>
+                <rect x="74" y="304" width="270" height="22" fill="#fef9c3" opacity=".6"/>
+
+                <text x="76" y="266" font-family="monospace" font-size="9" fill="#0a0e1a">品番 FK-2401-A   数量 320  納期 5/15</text>
+                <text x="76" y="292" font-family="monospace" font-size="9" fill="#0a0e1a">品番 FK-2402-B   数量 160  納期 5/22</text>
+                <text x="76" y="318" font-family="monospace" font-size="9" fill="#0a0e1a">品番 FK-2403-C   数量 80   納期 6/05</text>
+
+                <text x="76" y="356" font-family="system-ui" font-size="9" fill="#4a5161">合計：3点</text>
+                <text x="76" y="374" font-family="system-ui" font-size="9" fill="#4a5161">備考：4月分追加発注</text>
+
+                <text x="76" y="430" font-family="system-ui" font-size="9" fill="#7c8398">＿＿＿＿＿＿</text>
+                <text x="76" y="446" font-family="system-ui" font-size="9" fill="#7c8398">押印：取引先A社</text>
+
+                <!-- Center: Arrow with AI -->
+                <g transform="translate(395, 270)">
+                  <circle cx="15" cy="15" r="14" fill="#00b8d4"/>
+                  <text x="15" y="20" font-family="system-ui" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">AI</text>
+                  <path d="M 30 15 L 50 15 M 44 9 L 50 15 L 44 21" stroke="#00b8d4" fill="none" stroke-width="2" stroke-linecap="round"/>
+                </g>
+
+                <!-- Right: Structured output -->
+                <rect x="460" y="86" width="300" height="400" rx="8" fill="#0a0e1a"/>
+                <text x="476" y="108" font-family="monospace" font-size="11" fill="#7fd9e8">// EXTRACTED DATA</text>
+
+                <text x="476" y="138" font-family="monospace" font-size="9" fill="#7c8398">order_no:</text>
+                <text x="546" y="138" font-family="monospace" font-size="9" fill="#fff">"2026-0427-128"</text>
+
+                <text x="476" y="158" font-family="monospace" font-size="9" fill="#7c8398">date:</text>
+                <text x="546" y="158" font-family="monospace" font-size="9" fill="#fff">"2026-04-25"</text>
+
+                <text x="476" y="178" font-family="monospace" font-size="9" fill="#7c8398">client:</text>
+                <text x="546" y="178" font-family="monospace" font-size="9" fill="#fff">"取引先A社"</text>
+
+                <text x="476" y="206" font-family="monospace" font-size="9" fill="#7c8398">items: [</text>
+
+                <text x="490" y="226" font-family="monospace" font-size="9" fill="#fff">{</text>
+                <text x="500" y="240" font-family="monospace" font-size="9" fill="#7fd9e8">part_no:</text>
+                <text x="566" y="240" font-family="monospace" font-size="9" fill="#fff">"FK-2401-A"</text>
+                <text x="500" y="254" font-family="monospace" font-size="9" fill="#7fd9e8">qty:</text>
+                <text x="566" y="254" font-family="monospace" font-size="9" fill="#fff">320</text>
+                <text x="500" y="268" font-family="monospace" font-size="9" fill="#7fd9e8">due:</text>
+                <text x="566" y="268" font-family="monospace" font-size="9" fill="#fff">"2026-05-15"</text>
+                <text x="490" y="282" font-family="monospace" font-size="9" fill="#fff">},</text>
+
+                <text x="490" y="302" font-family="monospace" font-size="9" fill="#fff">{</text>
+                <text x="500" y="316" font-family="monospace" font-size="9" fill="#7fd9e8">part_no:</text>
+                <text x="566" y="316" font-family="monospace" font-size="9" fill="#fff">"FK-2402-B"</text>
+                <text x="500" y="330" font-family="monospace" font-size="9" fill="#7fd9e8">qty:</text>
+                <text x="566" y="330" font-family="monospace" font-size="9" fill="#fff">160</text>
+                <text x="500" y="344" font-family="monospace" font-size="9" fill="#7fd9e8">due:</text>
+                <text x="566" y="344" font-family="monospace" font-size="9" fill="#fff">"2026-05-22"</text>
+                <text x="490" y="358" font-family="monospace" font-size="9" fill="#fff">},</text>
+
+                <text x="490" y="378" font-family="monospace" font-size="9" fill="#fff">{</text>
+                <text x="500" y="392" font-family="monospace" font-size="9" fill="#7fd9e8">part_no:</text>
+                <text x="566" y="392" font-family="monospace" font-size="9" fill="#fff">"FK-2403-C"</text>
+                <text x="500" y="406" font-family="monospace" font-size="9" fill="#7fd9e8">qty:</text>
+                <text x="566" y="406" font-family="monospace" font-size="9" fill="#fff">80</text>
+                <text x="500" y="420" font-family="monospace" font-size="9" fill="#7fd9e8">due:</text>
+                <text x="566" y="420" font-family="monospace" font-size="9" fill="#fff">"2026-06-05"</text>
+                <text x="490" y="434" font-family="monospace" font-size="9" fill="#fff">}</text>
+
+                <text x="476" y="454" font-family="monospace" font-size="9" fill="#fff">]</text>
+
+                <rect x="476" y="464" width="80" height="14" rx="7" fill="#22c55e"/>
+                <text x="492" y="475" font-family="monospace" font-size="9" font-weight="600" fill="#fff">✓ 確信度 99%</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== APP 4: 配車最適化システム ===== -->
+    <div class="app-block">
+      <div class="app-grid reverse">
+        <div class="app-visual">
+          <div class="browser-frame">
+            <div class="browser-bar">
+              <div class="browser-dots"><span></span><span></span><span></span></div>
+              <div class="browser-url">tk-lab.internal / logistics-optimizer</div>
+            </div>
+            <div class="browser-content">
+              <!-- Logistics Optimizer Mockup -->
+              <svg viewBox="0 0 800 525" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="800" height="525" fill="#ffffff"/>
+                <!-- Header -->
+                <text x="40" y="48" font-family="system-ui" font-size="20" font-weight="700" fill="#1a3a5c">🚚 配車最適化システム</text>
+                <text x="40" y="68" font-family="system-ui" font-size="11" fill="#6b7b8d">受注残・発注残・在庫を統合し、月次の出荷計画と配車を自動立案</text>
+
+                <!-- Tabs (multi-tab interface) -->
+                <rect x="40" y="92" width="720" height="32" rx="6" fill="#f7f5f2"/>
+                <rect x="40" y="92" width="120" height="32" rx="6" fill="#1a3a8f"/>
+                <text x="60" y="113" font-family="system-ui" font-size="11" font-weight="600" fill="#fff">配車計画</text>
+                <text x="180" y="113" font-family="system-ui" font-size="11" fill="#7c8398">在庫充当</text>
+                <text x="278" y="113" font-family="system-ui" font-size="11" fill="#7c8398">納期管理</text>
+                <text x="376" y="113" font-family="system-ui" font-size="11" fill="#7c8398">運送費分析</text>
+                <text x="486" y="113" font-family="system-ui" font-size="11" fill="#7c8398">交渉用サマリ</text>
+
+                <!-- Left: 3 columns of summary data -->
+                <rect x="40" y="140" width="225" height="80" rx="8" fill="#eff6ff"/>
+                <text x="56" y="162" font-family="monospace" font-size="9" fill="#1a3a8f">// 出荷予定</text>
+                <text x="56" y="190" font-family="system-ui" font-size="22" font-weight="700" fill="#0a0e1a">87件</text>
+                <text x="56" y="208" font-family="system-ui" font-size="10" fill="#7c8398">5月分・配車対象</text>
+
+                <rect x="288" y="140" width="225" height="80" rx="8" fill="#f0fdf4"/>
+                <text x="304" y="162" font-family="monospace" font-size="9" fill="#15803d">// 共同配送便</text>
+                <text x="304" y="190" font-family="system-ui" font-size="22" font-weight="700" fill="#0a0e1a">12便</text>
+                <text x="304" y="208" font-family="system-ui" font-size="10" fill="#7c8398">3社合積で最適化</text>
+
+                <rect x="536" y="140" width="224" height="80" rx="8" fill="#fef3c7"/>
+                <text x="552" y="162" font-family="monospace" font-size="9" fill="#92400e">// 運送費</text>
+                <text x="552" y="190" font-family="system-ui" font-size="22" font-weight="700" fill="#0a0e1a">¥672,000</text>
+                <text x="552" y="208" font-family="system-ui" font-size="10" fill="#7c8398">5月見込み</text>
+
+                <!-- Schedule grid header -->
+                <text x="40" y="248" font-family="system-ui" font-size="12" font-weight="600" fill="#0a0e1a">📅 配車スケジュール(5月分)</text>
+
+                <!-- Day columns -->
+                <rect x="40" y="260" width="80" height="24" fill="#1a3a8f"/>
+                <text x="62" y="277" font-family="system-ui" font-size="10" font-weight="600" fill="#fff">5/2(金)</text>
+                <rect x="120" y="260" width="80" height="24" fill="#1a3a8f"/>
+                <text x="142" y="277" font-family="system-ui" font-size="10" font-weight="600" fill="#fff">5/7(水)</text>
+                <rect x="200" y="260" width="80" height="24" fill="#1a3a8f"/>
+                <text x="222" y="277" font-family="system-ui" font-size="10" font-weight="600" fill="#fff">5/9(金)</text>
+                <rect x="280" y="260" width="80" height="24" fill="#1a3a8f"/>
+                <text x="302" y="277" font-family="system-ui" font-size="10" font-weight="600" fill="#fff">5/14(水)</text>
+                <rect x="360" y="260" width="80" height="24" fill="#1a3a8f"/>
+                <text x="382" y="277" font-family="system-ui" font-size="10" font-weight="600" fill="#fff">5/16(金)</text>
+                <rect x="440" y="260" width="80" height="24" fill="#1a3a8f"/>
+                <text x="462" y="277" font-family="system-ui" font-size="10" font-weight="600" fill="#fff">5/21(水)</text>
+                <rect x="520" y="260" width="80" height="24" fill="#1a3a8f"/>
+                <text x="542" y="277" font-family="system-ui" font-size="10" font-weight="600" fill="#fff">5/23(金)</text>
+                <rect x="600" y="260" width="80" height="24" fill="#1a3a8f"/>
+                <text x="622" y="277" font-family="system-ui" font-size="10" font-weight="600" fill="#fff">5/28(水)</text>
+                <rect x="680" y="260" width="80" height="24" fill="#1a3a8f"/>
+                <text x="702" y="277" font-family="system-ui" font-size="10" font-weight="600" fill="#fff">5/30(金)</text>
+
+                <!-- Row 1: 顧客A -->
+                <rect x="40" y="284" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="40" y="284" width="80" height="32" fill="#DDEEFF" opacity="0.7"/>
+                <text x="52" y="304" font-family="monospace" font-size="9" fill="#0a0e1a">10.2t / 共</text>
+                <rect x="120" y="284" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="200" y="284" width="80" height="32" fill="#DDEEFF" opacity="0.7"/>
+                <text x="212" y="304" font-family="monospace" font-size="9" fill="#0a0e1a">8.4t / 単</text>
+                <rect x="280" y="284" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="360" y="284" width="80" height="32" fill="#DDEEFF" opacity="0.7"/>
+                <text x="372" y="304" font-family="monospace" font-size="9" fill="#0a0e1a">11.2t / 共</text>
+                <rect x="440" y="284" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="520" y="284" width="80" height="32" fill="#DDEEFF" opacity="0.7"/>
+                <text x="532" y="304" font-family="monospace" font-size="9" fill="#0a0e1a">9.6t / 共</text>
+                <rect x="600" y="284" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="680" y="284" width="80" height="32" fill="#DDEEFF" opacity="0.7"/>
+                <text x="692" y="304" font-family="monospace" font-size="9" fill="#0a0e1a">10.8t / 共</text>
+
+                <!-- Row 2: 顧客B -->
+                <rect x="40" y="316" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="40" y="316" width="80" height="32" fill="#DDFFD6" opacity="0.7"/>
+                <text x="52" y="336" font-family="monospace" font-size="9" fill="#0a0e1a">4.2t / 共</text>
+                <rect x="120" y="316" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="200" y="316" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="280" y="316" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="360" y="316" width="80" height="32" fill="#DDFFD6" opacity="0.7"/>
+                <text x="372" y="336" font-family="monospace" font-size="9" fill="#0a0e1a">5.8t / 共</text>
+                <rect x="440" y="316" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="520" y="316" width="80" height="32" fill="#DDFFD6" opacity="0.7"/>
+                <text x="532" y="336" font-family="monospace" font-size="9" fill="#0a0e1a">3.4t / 共</text>
+                <rect x="600" y="316" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="680" y="316" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+
+                <!-- Row 3: 顧客C -->
+                <rect x="40" y="348" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="40" y="348" width="80" height="32" fill="#FFF3CC" opacity="0.7"/>
+                <text x="52" y="368" font-family="monospace" font-size="9" fill="#0a0e1a">2.8t / 共</text>
+                <rect x="120" y="348" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="200" y="348" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="280" y="348" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="360" y="348" width="80" height="32" fill="#FFF3CC" opacity="0.7"/>
+                <text x="372" y="368" font-family="monospace" font-size="9" fill="#0a0e1a">4.6t / 共</text>
+                <rect x="440" y="348" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="520" y="348" width="80" height="32" fill="#FFF3CC" opacity="0.7"/>
+                <text x="532" y="368" font-family="monospace" font-size="9" fill="#0a0e1a">3.2t / 共</text>
+                <rect x="600" y="348" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+                <rect x="680" y="348" width="80" height="32" fill="#fff" stroke="#e9ecef"/>
+
+                <!-- Row labels (left) - shown below grid -->
+                <text x="40" y="400" font-family="monospace" font-size="9" fill="#1a3a8f">■ 顧客A(青)　　■ 顧客B(緑)　　■ 顧客C(黄)　　共=共同配送　単=単独便</text>
+
+                <!-- Alert/notification -->
+                <rect x="40" y="416" width="720" height="44" rx="8" fill="#fef2f2" stroke="#fca5a5"/>
+                <text x="58" y="436" font-family="system-ui" font-size="11" font-weight="600" fill="#b91c1c">⚠ 在庫不足を検知:品番 FK-2403-C × 80個</text>
+                <text x="58" y="452" font-family="system-ui" font-size="10" fill="#7f1d1d">仕入先からの入荷予定日(5/19)は出荷予定(5/16)に間に合いません。納期調整が必要です。</text>
+
+                <!-- Bottom action -->
+                <rect x="40" y="472" width="720" height="36" rx="8" fill="#1eb446"/>
+                <text x="320" y="495" font-family="system-ui" font-size="12" font-weight="600" fill="#fff">▶ 配車計画・納入予定表をダウンロード</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="app-text">
+          <div class="num">04</div>
+          <div class="status">運用中 / 自社内製</div>
+          <h3>配車最適化<br>システム</h3>
+          <div class="h3-sub">// LOGISTICS OPTIMIZER</div>
+          <p class="summary">
+            受注・発注・在庫を一元管理する自社開発の業務システム。従来は営業担当者が毎月、頭の中で組み立てていた<strong>配送計画と仕入先納期の調整</strong>を、システムが自動で最適化します。営業担当者は煩雑な事務作業から解放され、お客様・仕入先様との対話に集中できるようになりました。
+          </p>
+          <ul class="app-features">
+            <li>受注残・発注残・在庫を一元管理し、月次配車計画を自動立案</li>
+            <li>共同配送・単独便の最適な組み合わせをコスト比較で提示</li>
+            <li>仕入先ごとの納期特性(リードタイム・遅延傾向)を学習し、欠品リスクを事前に警告</li>
+            <li>営業部の修正をシステムに反映できる柔軟な運用設計</li>
+            <li>運送費の月次推移を可視化し、物流会社との交渉資料として活用</li>
+          </ul>
+          <div class="app-meta">
+            <div class="app-meta-item">
+              <div class="label">// BUILT BY</div>
+              <div class="value">代表取締役<br>(生成AI活用)</div>
+            </div>
+            <div class="app-meta-item">
+              <div class="label">// USERS</div>
+              <div class="value">営業部・<br>厚木事業所</div>
+            </div>
+            <div class="app-meta-item">
+              <div class="label">// IMPACT</div>
+              <div class="value">配車計画の<br>属人化を解消</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============== ELECTRONIC DEPT ============== -->
+<section class="densan" id="densan">
+  <div class="container">
+    <div class="densan-grid">
+      <div class="densan-text">
+        <div class="sec-eyebrow">DEVELOPMENT TEAM</div>
+        <h2 class="sec-title">電算室が、<br>TK Labの主体です。</h2>
+        <p class="sec-lead">
+          東京管材の電算室は、基幹システムの維持管理を担う部署であると同時に、<strong>TK Labの主体メンバー</strong>でもあります。社員のPC管理から基幹システムの運用、クラウド化、AI OCRの導入、RPAの構築、そして生成AIによるWebアプリ開発まで。「IT部門」と「内製開発チーム」を一つの部署が両方担っているのが、私たちの強みです。
+        </p>
+        <p class="sec-lead" style="margin-top:18px">
+          昔ながらの「電算室」という呼び名のまま、中身は現代の中小企業の中でも先進的なIT組織になっています。名前と実態のギャップが、東京管材らしさかもしれません。
+        </p>
+        <div class="role-tags">
+          <span class="role-tag">基幹システム維持管理</span>
+          <span class="role-tag">PC・クラウド管理</span>
+          <span class="role-tag">クラウド化検討</span>
+          <span class="role-tag">AI OCR導入</span>
+          <span class="role-tag">RPA構築</span>
+          <span class="role-tag">生成AI Webアプリ開発</span>
+        </div>
+      </div>
+      <div class="densan-card">
+        <div class="label">// THE TEAM</div>
+        <div class="title">電算室<br>= TK Lab Core</div>
+        <div class="num-display">6<span class="unit">領域</span></div>
+        <div class="desc">基幹IT運用から、AI活用、自社開発まで。一つの部署が、攻めと守りの両方を担っています。商社という規模感で、これだけの内製能力を持つ組織は希少です。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PHILOSOPHY ============== -->
+<section class="philosophy-tk">
+  <div class="container">
+    <div class="sec-eyebrow">OUR APPROACH</div>
+    <h2 class="sec-title">私たちの開発の、<br>哲学。</h2>
+    <p class="sec-lead">
+      ITベンダーに発注して作ってもらうのではなく、自分たちの手で作る。けれど外部の力を借りるべきところは、潔く借りる。「内製」と「協業」を合理的に使い分けながら、現場の声に応えるシステムを育てています。
+    </p>
+
+    <div class="philo-tk-grid">
+      <div class="philo-card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2v6m0 8v6M2 12h6m8 0h6"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
+        <h4>現場が、自ら作る。</h4>
+        <p>システムを使う人が、システムを作る。営業の流れ、品質保証の手順、物流の動き、それを一番分かっている人が開発に関わる。だから現場に本当に役立つ道具になります。</p>
+      </div>
+      <div class="philo-card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h4>現場の声を、聞きながら育てる。</h4>
+        <p>「ここが使いにくい」「この機能があったら」。日々の声を反映しながら、システムを継続的に改善。完成形ではなく、生き物として育てる。それが内製の最大の利点です。</p>
+      </div>
+      <div class="philo-card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+        </div>
+        <h4>内製と協業を、<br>合理的に使い分ける。</h4>
+        <p>すべて内製にこだわらない。AI OCRのように、信頼できる外部パートナーと協業する方が早く確実な領域は、潔く外注する。「内製主義」ではなく、「合理性」が判断基準です。</p>
+      </div>
+      <div class="philo-card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg>
+        </div>
+        <h4>70年の経験を、<br>ソフトウェアに。</h4>
+        <p>創業から70余年、蓄積してきた業務の知見。その判断基準、業務のフロー、現場の暗黙知。それを生成AIの力でソフトウェアに翻訳することが、TK Labの本当の使命です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ENGINEERING × AI (FUTURE) ============== -->
+<section class="engineering-ai" style="background:linear-gradient(180deg, var(--ink-2) 0%, var(--ink) 100%);padding:140px 40px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(ellipse at 70% 30%, rgba(0,184,212,.08), transparent 50%);pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start" class="engineering-ai-grid">
+      <div>
+        <div class="sec-eyebrow" style="color:var(--cyan-soft)">// ENGINEERING × AI</div>
+        <h2 class="sec-title">技術と、AIを<br>掛け合わせる。</h2>
+        <p class="sec-lead">
+          営業領域でのAI活用は形になりつつあります。次は<strong>品質保証室を中心とした技術領域でも、AIを使いこなしていく</strong>。これからの構想を、ここに書いておきます。
+        </p>
+        <div style="margin-top:32px;padding:20px 24px;background:rgba(0,184,212,.06);border-left:3px solid var(--cyan);border-radius:8px;">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--cyan-soft);letter-spacing:.15em;margin-bottom:8px">// STATUS</div>
+          <p style="font-size:13.5px;line-height:1.85;color:rgba(255,255,255,.8);margin:0">これらは現時点で取り組みを開始している、もしくは今後着手していく構想です。実装の進捗に合わせて、内容を更新していきます。</p>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:18px">
+
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(0,184,212,.3);border-radius:18px;padding:32px 36px">
+          <div style="font-family:var(--mono);font-size:11px;color:var(--cyan-soft);letter-spacing:.18em;margin-bottom:14px">// CONCEPT 01</div>
+          <h4 style="font-family:var(--jp);font-size:21px;font-weight:700;line-height:1.55;color:#fff;margin-bottom:14px;letter-spacing:.02em">品質記録の、データ資産化</h4>
+          <p style="font-size:14.5px;line-height:2.0;color:rgba(255,255,255,.72)">過去の検査記録、不良対策、サプライヤー別の品質傾向。<strong style="color:#fff">紙やExcelに散らばっている記録を体系的にデータ化</strong>し、AIが扱える資産に変えていきます。70年の経験を「ベテランの頭の中」から「組織の資産」へ。</p>
+        </div>
+
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(0,184,212,.3);border-radius:18px;padding:32px 36px">
+          <div style="font-family:var(--mono);font-size:11px;color:var(--cyan-soft);letter-spacing:.18em;margin-bottom:14px">// CONCEPT 02</div>
+          <h4 style="font-family:var(--jp);font-size:21px;font-weight:700;line-height:1.55;color:#fff;margin-bottom:14px;letter-spacing:.02em">技術ノウハウを、AIに教える</h4>
+          <p style="font-size:14.5px;line-height:2.0;color:rgba(255,255,255,.72)">鋳造の材質特性、鍛造の温度管理、加工精度の判断基準。<strong style="color:#fff">蓄積した技術情報を生成AIに読み込ませ、若手社員が必要な時にすぐ参照できる仕組み</strong>を構想しています。ベテランに聞かなくても答えが返ってくる環境を、目指しています。</p>
+        </div>
+
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(0,184,212,.3);border-radius:18px;padding:32px 36px">
+          <div style="font-family:var(--mono);font-size:11px;color:var(--cyan-soft);letter-spacing:.18em;margin-bottom:14px">// CONCEPT 03</div>
+          <h4 style="font-family:var(--jp);font-size:21px;font-weight:700;line-height:1.55;color:#fff;margin-bottom:14px;letter-spacing:.02em">事務作業から、現場と顧客対応へ</h4>
+          <p style="font-size:14.5px;line-height:2.0;color:rgba(255,255,255,.72)">検査報告書の作成、サプライヤーへの問い合わせ、顧客への品質報告。<strong style="color:#fff">事務的な作業をAIで効率化することで、品質保証室の担当者がより現場や顧客対応に集中できる</strong>環境を作っていきます。技術職が、技術に向き合える時間を増やすために。</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width:1024px){
+    .engineering-ai-grid{grid-template-columns:1fr!important;gap:32px!important}
+  }
+  @media (max-width:880px){
+    .engineering-ai{padding:80px 20px!important}
+  }
+</style>
+
+<!-- ============== DATA SECURITY ============== -->
+<section class="data-security" style="background:var(--ink);padding:120px 40px;position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);">
+  <div class="container" style="position:relative;z-index:2">
+    <div style="max-width:920px;margin:0 auto;text-align:center">
+      <div class="sec-eyebrow" style="color:var(--cyan-soft);justify-content:center;display:inline-flex">// DATA SECURITY</div>
+      <h2 class="sec-title" style="text-align:center;margin-top:20px">情報の保護は、最優先事項。</h2>
+      <p class="sec-lead" style="text-align:center;max-width:760px;margin:24px auto 48px">
+        AI活用を進めるからこそ、<strong>お客様・サプライヤー様からお預かりした情報の保護</strong>は最優先事項です。AIに渡してよいデータ、渡さないデータを社内で明確に区別する運用ルールを定め、社員教育を継続的に実施しています。
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px" class="security-grid">
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px 24px;text-align:left">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--cyan-soft);letter-spacing:.15em;margin-bottom:12px">// POLICY</div>
+          <div style="font-family:var(--jp);font-size:16px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.5">明文化された<br>社内ルール</div>
+          <p style="font-size:13px;line-height:1.85;color:rgba(255,255,255,.7);margin:0">AIに渡してよいデータ、要注意なデータ、絶対に渡さないデータを社内ポリシーで明確に区別。</p>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px 24px;text-align:left">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--cyan-soft);letter-spacing:.15em;margin-bottom:12px">// CONTRACT</div>
+          <div style="font-family:var(--jp);font-size:16px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.5">学習対象外の<br>契約・設定</div>
+          <p style="font-size:13px;line-height:1.85;color:rgba(255,255,255,.7);margin:0">業務利用するAIサービスは、入力データが学習対象外となる契約・設定で運用。</p>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px 24px;text-align:left">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--cyan-soft);letter-spacing:.15em;margin-bottom:12px">// EDUCATION</div>
+          <div style="font-family:var(--jp);font-size:16px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.5">継続的な<br>社員教育</div>
+          <p style="font-size:13px;line-height:1.85;color:rgba(255,255,255,.7);margin:0">機密情報の判断基準、仮名化の手順を社員に周知。困った時の相談ルートも整備。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width:880px){
+    .security-grid{grid-template-columns:1fr!important;gap:14px!important}
+    .data-security{padding:80px 20px!important}
+  }
+</style>
+
+<!-- ============== PARTNERSHIP FUTURE ============== -->
+<section class="partnership" style="background:linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);padding:140px 40px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(ellipse at 30% 50%, rgba(160,122,44,.1), transparent 50%);pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start" class="partnership-grid">
+      <div>
+        <div class="sec-eyebrow" style="color:#d4b673">FOR OUR SUPPLIERS</div>
+        <h2 class="sec-title">パートナーシップの、<br>未来。</h2>
+        <p class="sec-lead">
+          TK Labの取り組みは、東京管材の社内に閉じたものではありません。<strong>共に仕事をするサプライヤー様</strong>にも、その恩恵が広がる仕組みを目指しています。
+        </p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px">
+
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(160,122,44,.3);border-radius:18px;padding:32px 36px">
+          <div style="font-family:var(--mono);font-size:11px;color:#d4b673;letter-spacing:.18em;margin-bottom:14px">// FUTURE PLAN 01</div>
+          <h4 style="font-family:var(--jp);font-size:21px;font-weight:700;line-height:1.55;color:#fff;margin-bottom:14px;letter-spacing:.02em">事務負担の最小化</h4>
+          <p style="font-size:14.5px;line-height:2.0;color:rgba(255,255,255,.72)">サプライヤー様の事務負担を最小化するインターフェースを順次提供予定。注文書・納品書・請求書のやり取りを、AIで自動化し、人間でしかできない仕事に集中していただける環境を整えます。</p>
+        </div>
+
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(0,184,212,.3);border-radius:18px;padding:32px 36px">
+          <div style="font-family:var(--mono);font-size:11px;color:var(--cyan-soft);letter-spacing:.18em;margin-bottom:14px">// FUTURE PLAN 02</div>
+          <h4 style="font-family:var(--jp);font-size:21px;font-weight:700;line-height:1.55;color:#fff;margin-bottom:14px;letter-spacing:.02em">需要予測の共有</h4>
+          <p style="font-size:14.5px;line-height:2.0;color:rgba(255,255,255,.72)">AI による需要予測の精度向上に伴い、サプライヤー様の生産計画にも活用していただける情報を提供。発注の波を平準化し、無理のない生産体制づくりに貢献します。</p>
+        </div>
+
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:32px 36px">
+          <div style="font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.18em;margin-bottom:14px">// THE COMMITMENT</div>
+          <h4 style="font-family:var(--jp);font-size:21px;font-weight:700;line-height:1.55;color:#fff;margin-bottom:14px;letter-spacing:.02em">単なる買い手ではなく、<br>共に進化するパートナー。</h4>
+          <p style="font-size:14.5px;line-height:2.0;color:rgba(255,255,255,.72)">弊社と仕事をすれば、今までよりも少ない人数で仕事ができる。<strong style="color:#fff">それが、私たちがサプライヤー様に約束したいこと</strong>です。共にAIを活用し、共に進化する関係を築いていきたいと考えています。</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width:1024px){
+    .partnership-grid{grid-template-columns:1fr!important;gap:32px!important}
+  }
+  @media (max-width:880px){
+    .partnership{padding:80px 20px!important}
+  }
+</style>
+
+<!-- ============== CTA ============== -->
+<section class="cta">
+  <div class="container">
+    <h2>TK Labで、<br>働きませんか。</h2>
+    <p>
+      鋳造の現場を知る私たちと、生成AIで業務を変えていく仲間を、いつでもお待ちしています。<br>
+      鉄を扱う商社で、AI開発に挑める。そんな環境は、なかなかありません。
+    </p>
+    <div class="cta-buttons">
+      <a href="careers.html" class="btn btn-primary">採用情報を見る <span class="arrow">→</span></a>
+      <a href="index.html#contact" class="btn btn-ghost">お問い合わせ <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="top">
+        <img class="brand-logo" src="assets/img/logo-shield-white.png" alt="TOKYO KANZAI">
+        <img class="brand-logo-jp" src="assets/img/logo-jp-edomoji-white.png" alt="東京管材株式会社">
+      </div>
+      <p>
+        〒100-0011<br>
+        東京都千代田区内幸町1-3-1<br>
+        幸ビルディング9F（エキスパートオフィス内）<br>
+        TEL: 03-4582-1151<br>
+        <br>
+        <span style="font-family:var(--mono);font-size:11px;color:var(--cyan-soft);letter-spacing:.1em;">// MAIN BANKS</span><br>
+        三菱UFJ・りそな・横浜・商工中金
+      </p>
+    </div>
+    <div class="foot-col">
+      <h5>BUSINESS</h5>
+      <ul>
+        <li><a href="index.html#philosophy">事業内容</a></li>
+        <li><a href="index.html#quality">品質保証</a></li>
+        <li><a href="index.html#products">製品・用途</a></li>
+        <li><a href="tklab.html">TK Lab</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>COMPANY</h5>
+      <ul>
+        <li><a href="company.html">会社概要</a></li>
+        <li><a href="company.html#history">沿革</a></li>
+        <li><a href="company.html#locations">拠点</a></li>
+        <li><a href="index.html#vision">VISION</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>CONNECT</h5>
+      <ul>
+        <li><a href="careers.html">採用情報</a></li>
+        <li><a href="index.html#contact">お問い合わせ</a></li>
+        <li><a href="#">English</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 1951–2026 TOKYO KANZAI CO., LTD.</div>
+    <div>// TK LAB</div>
+  </div>
+</footer>
+
+
+<script>
+  // Background video playback control
+  (function(){
+    const videos = document.querySelectorAll('.hero-video, .tklab-video, .page-hero-video, .hub-video');
+    if (!videos.length) return;
+
+    videos.forEach((video) => {
+      video.playbackRate = 0.85;
+
+      const tryPlay = () => {
+        const p = video.play();
+        if (p && typeof p.catch === 'function') {
+          p.catch(() => {
+            const onInteract = () => {
+              videos.forEach(v => v.play().catch(() => {}));
+              document.removeEventListener('click', onInteract);
+              document.removeEventListener('touchstart', onInteract);
+            };
+            document.addEventListener('click', onInteract);
+            document.addEventListener('touchstart', onInteract);
+          });
+        }
+      };
+
+      if (video.readyState >= 2) tryPlay();
+      else video.addEventListener('loadeddata', tryPlay, { once: true });
+    });
+  })();
+
+  // Scroll-triggered reveal animations
+  (function(){
+    const autoSelectors = [
+      '.sec-eyebrow', '.sec-title', '.sec-lead',
+      '.quality-photo', '.qf', '.pcard', '.xray-card',
+      '.vision-card', '.ap-card', '.gallery-item',
+      '.feat-app', '.app-card', '.daily-ai',
+      '.tl-item', '.loc-card', '.org-card', '.mb-item',
+      '.pos-card', '.team-card', '.cond-row', '.flow-step',
+      '.quote-block', '.tklab-footer', '.philo-card'
+    ];
+    autoSelectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach((el, i) => {
+        if (el.closest('.hero') || el.closest('.page-hero')) return;
+        if (el.classList.contains('fade-up') || el.classList.contains('reveal') || el.classList.contains('auto-reveal')) return;
+        el.classList.add('auto-reveal');
+        const parent = el.parentElement;
+        if (parent && parent.children.length > 1 && parent.children.length <= 6) {
+          const idx = Array.from(parent.children).indexOf(el);
+          if (idx > 0 && idx <= 5) el.classList.add('delay-' + idx);
+        }
+      });
+    });
+
+    const targets = document.querySelectorAll('.fade-up, .auto-reveal');
+    if (!targets.length || !('IntersectionObserver' in window)) {
+      targets.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    targets.forEach(el => io.observe(el));
+  })();
+
+</script>
+</body>
+
+</html>
