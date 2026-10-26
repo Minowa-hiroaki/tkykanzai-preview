@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta name="robots" content="noindex, nofollow">
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -16,6 +18,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="keywords" content="東京管材,東京管材株式会社,TOKYO KANZAI,鋳造,鍛造,焼結金属,精密,機械加工,組立,製缶,製缶プレス,表面処理,ロストフォーム,ダイカスト,精密鋳造,鋳鉄,ダクタイル,可鍛鋳鉄,鋳鋼,特殊鋼,ステンレス,アルミニウム合金,銅合金,非鉄合金,金属素形材,専門商社,AI,東京">
 <meta name="author" content="東京管材株式会社">
 <link rel="canonical" href="https://www.tkykanzai.co.jp/">
+<link rel="alternate" hreflang="ja" href="https://www.tkykanzai.co.jp/">
+<link rel="alternate" hreflang="en" href="https://www.tkykanzai.co.jp/en/">
+<link rel="alternate" hreflang="x-default" href="https://www.tkykanzai.co.jp/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -799,7 +804,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .vision-card{padding:32px 24px}
     .quality-features{grid-template-columns:1fr;gap:14px}
     .quality-banner{min-height:260px;aspect-ratio:auto}
-    .quality-banner-overlay{padding:32px 20px}
+    .quality-banner-overlay{position:relative;padding:32px 20px}
     .products-gallery{grid-template-columns:1fr;grid-auto-rows:170px;gap:12px}
     .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
     .tklab-footer{grid-template-columns:1fr;text-align:center}
@@ -904,6 +909,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   ]
 }
 </script>
+<style>
+  /* 日本語の改行（2026-10-24）: 語のまとまりで折り、最後の行に「す。」だけが残らないようにする */
+  body{word-break:auto-phrase;line-break:strict;overflow-wrap:anywhere}
+  h1,h2,h3,h4,h5,.sec-title,.page-title,.hero-title,.msg-headline,.banner-title,.vision-headline,.ceo-quote{text-wrap:balance}
+  p,li,.value,.desc,.role,.sec-lead,.page-lead,.hero-lead{text-wrap:pretty}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -911,116 +922,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- ============== OPENING ANIMATION ============== -->
-<div id="tk-opening" aria-hidden="true">
-  <div class="tk-opening-grid"></div>
-  <div class="tk-opening-inner">
-    <img id="tk-op-shield" src="assets/img/logo-shield-white.svg" alt="">
-    <img id="tk-op-edomoji" src="assets/img/logo-jp-edomoji-white.svg" alt="">
-  </div>
-  <button id="tk-op-skip" type="button">スキップ ›</button>
-</div>
-<style>
-  #tk-opening{
-    position:fixed;inset:0;z-index:9999;
-    background:#0a0e1a;
-    display:flex;align-items:center;justify-content:center;
-    overflow:hidden;
-    opacity:1;
-  }
-  #tk-opening::before{
-    content:"";position:absolute;inset:0;
-    background-image:
-      radial-gradient(circle at 22% 28%, rgba(0,184,212,.18), transparent 42%),
-      radial-gradient(circle at 80% 72%, rgba(49,88,212,.22), transparent 52%),
-      linear-gradient(160deg, #0f1b3d 0%, #0a0e1a 60%, #070a14 100%);
-  }
-  #tk-opening .tk-opening-grid{
-    position:absolute;inset:0;
-    background-image:
-      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
-    background-size:46px 46px;
-    mask-image:radial-gradient(ellipse at center, black 25%, transparent 78%);
-    -webkit-mask-image:radial-gradient(ellipse at center, black 25%, transparent 78%);
-  }
-  #tk-opening .tk-opening-inner{
-    position:relative;z-index:2;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    gap:38px;
-    padding:0 24px;
-  }
-  #tk-op-shield{
-    width:min(340px, 62vw);height:auto;
-    opacity:0;transform:scale(.72);
-  }
-  #tk-op-edomoji{
-    width:min(420px, 76vw);height:auto;
-    opacity:0;transform:scale(.8);
-  }
-  #tk-op-skip{
-    position:absolute;right:26px;bottom:24px;z-index:3;
-    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);
-    color:rgba(255,255,255,.85);
-    font-family:var(--sans, system-ui);font-size:13px;letter-spacing:.08em;
-    padding:9px 18px;border-radius:999px;cursor:pointer;
-    transition:background .2s ease;
-  }
-  #tk-op-skip:hover{background:rgba(255,255,255,.16)}
-  /* アニメーション定義 */
-  #tk-opening.play #tk-op-shield{
-    animation:tkShieldIn .8s ease forwards, tkLogoOut .7s ease 2.4s forwards;
-  }
-  #tk-opening.play #tk-op-edomoji{
-    animation:tkEdoIn .9s ease .7s forwards, tkLogoOut .7s ease 2.4s forwards;
-  }
-  @keyframes tkShieldIn{ from{opacity:0;transform:scale(.72)} to{opacity:1;transform:scale(1)} }
-  @keyframes tkEdoIn{ from{opacity:0;transform:scale(.8)} to{opacity:1;transform:scale(1)} }
-  @keyframes tkLogoOut{ from{opacity:1;transform:scale(1)} to{opacity:0;transform:scale(1.25)} }
-  #tk-opening.fade-out{ opacity:0;transition:opacity .6s ease;pointer-events:none; }
-  #tk-opening.hidden{ display:none; }
-  /* アニメーションを好まないユーザーへの配慮 */
-  @media (prefers-reduced-motion: reduce){
-    #tk-opening{display:none}
-  }
-</style>
-<script>
-(function(){
-  var op = document.getElementById('tk-opening');
-  if(!op) return;
-  // 2回目以降は出さない(セッション中)
-  var seen = false;
-  try { seen = sessionStorage.getItem('tkOpeningSeen') === '1'; } catch(e){}
-  function finish(){
-    op.classList.add('fade-out');
-    setTimeout(function(){ op.classList.add('hidden'); }, 650);
-    try { sessionStorage.setItem('tkOpeningSeen','1'); } catch(e){}
-  }
-  if(seen){
-    op.classList.add('hidden');
-    return;
-  }
-  // 再生開始
-  op.classList.add('play');
-  // 自動で約3秒後にフェードアウト
-  var timer = setTimeout(finish, 3000);
-  // スキップボタン
-  var skip = document.getElementById('tk-op-skip');
-  if(skip){
-    skip.addEventListener('click', function(){
-      clearTimeout(timer);
-      finish();
-    });
-  }
-})();
-</script>
-<!-- ============== END OPENING ANIMATION ============== -->
-
 
 <header>
   <a href="index.html" class="brand">
-    <img class="brand-logo light" src="assets/img/logo-shield-white.svg" alt="東京管材 TOKYO KANZAI">
-    <img class="brand-logo dark" src="assets/img/logo-shield-color.svg" alt="東京管材 TOKYO KANZAI">
+    <img class="brand-logo light" src="assets/img/logo-shield-white.png" alt="東京管材 TOKYO KANZAI">
+    <img class="brand-logo dark" src="assets/img/logo-shield-color.png" alt="東京管材 TOKYO KANZAI">
   </a>
   <nav>
     <ul>
@@ -1029,6 +935,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><a href="tklab.html">TK Lab</a></li>
       <li><a href="#vision">Vision</a></li>
       <li><a href="company.html">会社概要</a></li>
+      <li><a href="policy.html">情報の取り扱い</a></li>
       <li><a href="careers.html">採用</a></li>
       <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
     </ul>
@@ -1038,7 +945,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ============== HERO ============== -->
 <section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture x-webkit-airplay="deny">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture x-webkit-airplay="deny" poster="assets/video/posters/brand-story.jpg">
     <source src="assets/video/brand-story.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
@@ -1053,7 +960,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span>TK Lab — AIで次の世代を設計中</span>
     </div>
     <h1 class="hero-title reveal d2">
-      75年の調達ノウハウを<br>
+      1951年から続く調達ノウハウを<br>
       <span class="grad">AIで深化させる</span>
     </h1>
     <p class="hero-lead reveal d3">
@@ -1071,8 +978,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="label">創業 1951年</div>
       </div>
       <div class="stat reveal d3">
-        <div class="num" data-target="28">0<span class="unit">億円</span></div>
-        <div class="label">年商(2025年度)</div>
+        <div class="num" data-target="29">0<span class="unit">億円</span></div>
+        <div class="label">年商</div>
       </div>
       <div class="stat reveal d4">
         <div class="num" data-target="27">0<span class="unit">名</span></div>
@@ -1208,6 +1115,77 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ============== DATA SECURITY FIRST ============== -->
+<style>
+  .security-first{background:linear-gradient(180deg,var(--ink) 0%,#101a33 100%);padding:110px 40px;position:relative;overflow:hidden;border-top:1px solid rgba(0,184,212,.25);border-bottom:1px solid rgba(0,184,212,.25)}
+  .security-first .sec-eyebrow{color:var(--cyan-soft)}
+  .security-first .sec-title{color:#fff}
+  .security-first .sec-lead{color:rgba(255,255,255,.75);max-width:820px}
+  .security-first .sec-lead strong{color:#fff}
+  .sf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+  .sf-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:26px 24px}
+  .sf-card .k{font-family:var(--mono);font-size:11px;letter-spacing:.15em;color:var(--cyan-soft);margin-bottom:10px}
+  .sf-card h4{font-family:var(--jp);font-size:18px;font-weight:700;color:#fff;line-height:1.5;margin-bottom:10px}
+  .sf-card p{font-size:14px;line-height:1.9;color:rgba(255,255,255,.72);margin:0}
+  .sf-buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
+  @media (max-width:880px){.security-first{padding:80px 20px}.sf-grid{grid-template-columns:1fr}}
+</style>
+<section class="security-first" id="security-first">
+  <div class="container">
+    <div class="sec-eyebrow">// DATA SECURITY FIRST</div>
+    <h2 class="sec-title">AIを使うからこそ、<br>情報の取り扱いを最優先に</h2>
+    <p class="sec-lead">
+      お客様・サプライヤー様からお預かりした取引の情報は、AIにそのまま入れません。<strong>AIに入れる前に、社内で作ったアプリで伏せる。</strong>この決まりを、全社員が使う仕組みにしています。
+    </p>
+    <div class="sf-grid">
+      <div class="sf-card">
+        <div class="k">// 01 MASKING</div>
+        <h4>AIに入れる前に<br>アプリで伏せる</h4>
+        <p>社内アプリ「AI入力前チェック」が、社名・品番・注番・単価などを伏せた写しを作ります。社員が仕事の書類をAIに使うときは、このアプリを使います。</p>
+      </div>
+      <div class="sf-card">
+        <div class="k">// 02 POLICY</div>
+        <h4>取引の情報は<br>外に出さない</h4>
+        <p>取引を特定できる情報は、AIや外部のサービスにそのまま入れないと社内の決まりで定めています。注文書を外部に渡すのは、契約を結んだDX-OCRの提供会社だけです。</p>
+      </div>
+      <div class="sf-card">
+        <div class="k">// 03 SETTING</div>
+        <h4>学習に使わない設定<br>送った記録を残す</h4>
+        <p>業務で使う生成AIは、入力した内容を学習に使わない設定で利用しています。アプリからAIへ送ったときは、誰が・いつ・どれだけ送ったかを記録します（中身は残しません）。</p>
+      </div>
+    </div>
+<style>
+  .mask-demo{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch;margin-top:40px;text-align:left}
+  .md-panel{background:#0d1526;border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:22px}
+  .md-after{border-color:rgba(0,184,212,.5)}
+  .md-label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--cyan-soft);margin-bottom:12px}
+  .md-panel p{font-size:14px;line-height:2;color:rgba(255,255,255,.85);margin:0}
+  .md-panel mark{background:rgba(201,97,46,.30);color:#fff;border-radius:4px;padding:1px 4px}
+  .md-panel mark{white-space:nowrap}
+  .md-after mark{background:rgba(0,184,212,.22);color:var(--cyan-soft);font-family:var(--mono);font-size:13px}
+  .md-arrow{align-self:center;justify-self:center;color:var(--cyan-soft);font-size:22px}
+  .md-note{grid-column:1/-1;font-size:13px;line-height:1.8;color:rgba(255,255,255,.62);margin:4px 0 0}
+  @media (max-width:880px){.mask-demo{grid-template-columns:1fr}.md-arrow{transform:rotate(90deg)}}
+</style>
+    <div class="mask-demo">
+      <div class="md-panel">
+        <div class="md-label">// BEFORE — 伏せる前（社内のPCの中だけ）</div>
+        <p lang="ja"><mark>見本商事株式会社</mark> 様から、注番 <mark>MS-2026-1105</mark> で、品番 <mark>XY-1001</mark> のフランジを <mark>40個</mark>、納期 <mark>2026年11月20日</mark> でいただいています。単価は <mark>2,380円</mark> です。担当の<mark>田中</mark>様（<mark>03-0000-0000</mark>）に、納期のお返事を書きます。</p>
+      </div>
+      <div class="md-arrow" aria-hidden="true">→</div>
+      <div class="md-panel md-after">
+        <div class="md-label">// AFTER — AIに入れる写し</div>
+        <p lang="ja"><mark>【社名1】</mark> 様から、注番 <mark>【番号1】</mark> で、品番 <mark>【番号2】</mark> のフランジを <mark>【数量1】</mark>、納期 <mark>【日付1】</mark> でいただいています。単価は <mark>【金額1】</mark> です。担当の<mark>【名前1】</mark>様（<mark>【電話1】</mark>）に、納期のお返事を書きます。</p>
+      </div>
+      <p class="md-note">架空の文章を、実際の「AI入力前チェック」に通した結果です。AIに入れるのは右の写しだけです。「記号は変えずに使う」といったAIへの注意書きも、アプリが自動で付けます。AIの答えは、アプリの中で元の値に戻します。</p>
+    </div>
+    <div class="sf-buttons">
+      <a href="tklab.html#security" class="btn btn-primary">情報の保護の取り組み <span class="arrow">→</span></a>
+      <a href="policy.html" class="btn btn-ghost">情報の取り扱い方針 <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- ============== TK LAB ============== -->
 <section class="tklab" id="tklab">
   <div class="grid-bg"></div>
@@ -1217,12 +1195,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="sec-eyebrow">TK LAB / IN-HOUSE DEVELOPMENT</div>
         <h2 class="sec-title">75年の業務知見を<br>ソフトウェアにする</h2>
         <p class="sec-lead">
-          TK Labは、東京管材の社内システム開発の取り組みです。<strong style="color:#fff;font-weight:700;">生成AIを取り入れて、私たち自身の手でアプリケーションを内製</strong>。<strong style="color:#fff;font-weight:800;font-size:1.05em;">「専門商社の現場に最適化された自分たちのための道具」</strong>を自分たちで作り、自分たちで育てています。<strong style="color:#fff;font-weight:700;">いまは社内向け。その経験を礎に、次はお客様やサプライヤー様と繋がる仕組みへ広げていきます。</strong>
+          TK Labは、東京管材の社内システム開発の取り組みです。<strong style="color:#fff;font-weight:700;">生成AIを取り入れて、私たち自身の手でアプリケーションを内製</strong>。必要に応じて外部パートナーとも協業しながら、<strong style="color:#fff;font-weight:800;font-size:1.05em;">「専門商社の現場に最適化された自分たちのための道具」</strong>を自分たちで作り、自分たちで育てています。
         </p>
       </div>
       <div class="tklab-tagline">
         // mission<br>
-        Encode 70 years of metal-sourcing<br>
+        Encode decades of metal-sourcing<br>
         knowledge into software,<br>
         scale it for the next generation.
       </div>
@@ -1230,8 +1208,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- ========== NOW: 2 featured apps ========== -->
     <div class="now-section-label">
-      <span class="badge">NOW IN PRODUCTION</span>
-      <span class="text">— 現在運用中のシステム</span>
+      <span class="badge">IN USE / IN TRIAL</span>
+      <span class="text">— 運用中・試運転中のシステム</span>
       <span class="line"></span>
     </div>
 
@@ -1284,18 +1262,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="icon">
             <svg viewBox="0 0 24 24"><path d="M14 3v5h5M5 3h9l5 5v13a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/><path d="M8 13h8M8 17h5M8 9h2"/></svg>
           </div>
-          <span class="status-tag">運用中</span>
+          <span class="status-tag">試運転中</span>
         </div>
-        <h3>DX-OCR<br>注文書データ化</h3>
-        <div class="tagline">// PARTNERED — PAPER TO DATA</div>
+        <h3>DX-OCR × 社内アプリ<br>注文書データ化</h3>
+        <div class="tagline">// PARTNERED + IN-HOUSE — PAPER TO DATA</div>
         <p>
-          紙やPDFで届く注文書を、DX-OCRで瞬時にデータ化。手入力にかかっていた時間とミスをほぼゼロにし、データ化された情報をそのまま社内システムや基幹系へ連携できる体制を構築しています。<strong style="color:#fff;font-weight:600;">外部パートナーと協業し導入</strong>。
+          紙やPDFで届く注文書を読み取り、受注の入力につなげる取り組み。契約を結んだ外部パートナーのDX-OCRと、社内で作った読み取りアプリを組み合わせ、最適な方法を試運転しています。<strong style="color:#fff;font-weight:600;">注文書を外部に渡すのは、契約を結んだDX-OCRの提供会社だけ</strong>。
         </p>
         <ul class="features">
-          <li>紙・PDF・FAXの注文書をAIで自動読取</li>
+          <li>紙・PDF・FAXの注文書を読み取り</li>
           <li>品番・数量・納期などの項目を構造化</li>
-          <li>手入力ミスを大幅に削減</li>
-          <li>社内システムへのデータ連携を効率化</li>
+          <li>社内アプリは会社の中のPCだけで処理</li>
+          <li>外部に渡すのは契約先のDX-OCRだけ</li>
         </ul>
       </div>
 
@@ -1330,7 +1308,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <p style="font-size:14px;color:rgba(255,255,255,.65);margin-bottom:20px;line-height:1.85;">
-        生成AIを社内の事務作業・営業活動に活用しています。社員一人ひとりの「ちょっとした作業」を効率化することが、組織全体の生産性向上につながると考えています。
+        生成AIを社内の事務作業・営業活動に活用しています。社員一人ひとりの「ちょっとした作業」を効率化することが、組織全体の生産性向上につながると考えています。仕事の書類をAIに使うときは、社内アプリ「AI入力前チェック」で社名・品番などを伏せてから使います。
       </p>
       <div class="daily-tags">
         <span class="dtag"><span class="key">01</span>メール文面の作成支援</span>
@@ -1339,6 +1317,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="dtag"><span class="key">04</span>調査・情報収集</span>
         <span class="dtag"><span class="key">05</span>社内資料の作成支援</span>
         <span class="dtag"><span class="key">06</span>事務処理の効率化</span>
+      </div>
+    </div>
+
+    <!-- Department apps & cycle -->
+    <div class="daily-ai" style="margin-top:24px">
+      <div class="daily-ai-head">
+        <div>
+          <h4>部署ごとの社内アプリ</h4>
+          <div class="sub">// APPS FOR EVERY DEPARTMENT</div>
+        </div>
+      </div>
+      <p style="font-size:14px;color:rgba(255,255,255,.65);margin-bottom:20px;line-height:1.85;">
+        一人ひとりの仕事に合わせて、社内でアプリを作っています。作って渡すだけでなく、運用まで支え、使った記録を確かめる。アプリを使った取り組みは、評価に反映する。その中から、次のアイデアが社員から出てきます。
+      </p>
+      <div class="daily-tags">
+        <span class="dtag"><span class="key">全社員</span>AI入力前チェック</span>
+        <span class="dtag"><span class="key">総務部</span>勤怠の届</span>
+        <span class="dtag"><span class="key">プロフィット事業部</span>輸入経費の共通処理</span>
+        <span class="dtag"><span class="key">営業部</span>価格改定の支援</span>
+        <span class="dtag"><span class="key">品質保証室</span>検査履歴書の集計</span>
+        <span class="dtag"><span class="key">厚木事業所</span>配車最適化システム</span>
       </div>
     </div>
 
@@ -1569,7 +1568,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ============== CONTACT ============== -->
 <section class="contact" id="contact">
-  <video class="contact-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture x-webkit-airplay="deny">
+  <video class="contact-video" muted loop playsinline preload="none" data-lazy-video disablepictureinpicture x-webkit-airplay="deny" poster="assets/video/posters/contact-bg.jpg">
     <source src="assets/video/contact-bg.mp4" type="video/mp4">
   </video>
   <div class="container">
@@ -1595,8 +1594,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="foot-grid">
     <div class="foot-brand">
       <div class="top">
-        <img class="brand-logo" src="assets/img/logo-shield-white.svg" alt="TOKYO KANZAI">
-        <img class="brand-logo-jp" src="assets/img/logo-jp-edomoji-white.svg" alt="東京管材株式会社">
+        <img class="brand-logo" src="assets/img/logo-shield-white.png" alt="TOKYO KANZAI">
+        <img class="brand-logo-jp" src="assets/img/logo-jp-edomoji-white.png" alt="東京管材株式会社">
       </div>
       <p>
         〒100-0011<br>
@@ -1624,6 +1623,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="company.html#history">沿革</a></li>
         <li><a href="company.html#locations">拠点</a></li>
         <li><a href="#vision">VISION</a></li>
+        <li><a href="policy.html">情報の取り扱い方針</a></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -1631,7 +1631,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul>
         <li><a href="careers.html">採用情報</a></li>
         <li><a href="#contact">お問い合わせ</a></li>
-        <li><a href="#">English</a></li>
+        <li><a href="en/index.html" hreflang="en" lang="en">English</a></li>
       </ul>
     </div>
   </div>
@@ -1786,6 +1786,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     nums.forEach(el => io.observe(el));
   })();
 
+</script>
+<script>
+// 2026-10-26: 動きを減らす設定の人には動画を止める。data-lazy-video の動画は近くまで来てから読み込む
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('video').forEach(function(v){
+    if (reduce) { v.removeAttribute('autoplay'); v.pause(); }
+  });
+  var lazy = document.querySelectorAll('video[data-lazy-video]');
+  if (reduce || !lazy.length) return;
+  var start = function(v){ v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function(){}); };
+  if (!('IntersectionObserver' in window)) { lazy.forEach(start); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting) { start(e.target); io.unobserve(e.target); } });
+  }, {rootMargin: '300px'});
+  lazy.forEach(function(v){ io.observe(v); });
+})();
 </script>
 </body>
 </html>

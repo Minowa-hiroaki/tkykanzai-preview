@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta name="robots" content="noindex, nofollow">
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -12,16 +14,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TK Lab | 東京管材の社内システム開発と生成AI活用</title>
-<meta name="description" content="東京管材の社内システム開発の取り組み「TK Lab」。生成AIを取り入れ、Claude、Gemini、ChatGPTを並列活用。配車最適化システム、DX-OCRによる注文書のデータ化、業務自動化を推進しています。">
-<meta name="keywords" content="TK Lab,東京管材,AI,生成AI,Claude,Gemini,ChatGPT,DX,業務システム,配車最適化,DX-OCR,商社,自社開発">
+<meta name="description" content="東京管材の社内システム開発の取り組み「TK Lab」。生成AIを業務に取り入れ、社内アプリの内製と、AIに入れる前に取引の情報を伏せる仕組みづくりを進めています。">
+<meta name="keywords" content="TK Lab,東京管材,AI,生成AI,DX,業務システム,配車最適化,DX-OCR,商社,自社開発">
 <meta name="author" content="東京管材株式会社">
 <link rel="canonical" href="https://www.tkykanzai.co.jp/tklab.html">
+<link rel="alternate" hreflang="ja" href="https://www.tkykanzai.co.jp/tklab.html">
+<link rel="alternate" hreflang="en" href="https://www.tkykanzai.co.jp/en/tklab.html">
+<link rel="alternate" hreflang="x-default" href="https://www.tkykanzai.co.jp/tklab.html">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="東京管材株式会社">
 <meta property="og:title" content="TK Lab | 東京管材の社内システム開発と生成AI活用">
-<meta property="og:description" content="生成AIを取り入れた自社開発の業務システム。Claude・Gemini・ChatGPTを並列で活用し、ものづくり商社のDXを推進。">
+<meta property="og:description" content="生成AIを取り入れた自社開発の業務システム。内製と協業で、ものづくり商社のDXを推進。">
 <meta property="og:url" content="https://www.tkykanzai.co.jp/tklab.html">
 <meta property="og:image" content="https://www.tkykanzai.co.jp/assets/og/og-default.jpg">
 <meta property="og:image:width" content="1200">
@@ -31,7 +36,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TK Lab | 東京管材の社内システム開発と生成AI活用">
-<meta name="twitter:description" content="生成AIを取り入れた自社開発の業務システム。Claude・Gemini・ChatGPTを並列で活用し、ものづくり商社のDXを推進。">
+<meta name="twitter:description" content="生成AIを取り入れた自社開発の業務システム。内製と協業で、ものづくり商社のDXを推進。">
 <meta name="twitter:image" content="https://www.tkykanzai.co.jp/assets/og/og-default.jpg">
 
 <!-- Favicons -->
@@ -62,7 +67,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     --cyan-soft:#7fd9e8;
     --gold:#a07a2c;
     --warm:#c9612e;
-    --green:#22c55e;
+    --green:#2d8a5f;
     --red:#ef4444;
     --sans:'Manrope', system-ui, sans-serif;
     --display:'DM Serif Display', serif;
@@ -267,7 +272,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     letter-spacing:.1em;font-weight:600;margin-bottom:24px;
   }
   .app-text .status::before{
-    content:"";width:7px;height:7px;border-radius:50%;background:#22c55e;
+    content:"";width:7px;height:7px;border-radius:50%;background:#2d8a5f;
   }
   .app-text .status.partner{
     background:rgba(160,122,44,.15);border-color:rgba(160,122,44,.4);color:#d4b673;
@@ -339,7 +344,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     display:flex;align-items:center;gap:8px;
   }
   .browser-url::before{
-    content:"";width:8px;height:8px;border-radius:50%;background:#22c55e;
+    content:"";width:8px;height:8px;border-radius:50%;background:#2d8a5f;
   }
   .browser-content{
     background:#fff;
@@ -519,6 +524,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
 </style>
+<style>
+  /* 日本語の改行（2026-10-24）: 語のまとまりで折り、最後の行に「す。」だけが残らないようにする */
+  body{word-break:auto-phrase;line-break:strict;overflow-wrap:anywhere}
+  h1,h2,h3,h4,h5,.sec-title,.page-title,.hero-title,.msg-headline,.banner-title,.vision-headline,.ceo-quote{text-wrap:balance}
+  p,li,.value,.desc,.role,.sec-lead,.page-lead,.hero-lead{text-wrap:pretty}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -529,7 +540,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header>
   <a href="index.html" class="brand">
-    <img class="brand-logo" src="assets/img/logo-shield-white.svg" alt="東京管材 TOKYO KANZAI">
+    <img class="brand-logo" src="assets/img/logo-shield-white.png" alt="東京管材 TOKYO KANZAI">
   </a>
   <nav>
     <ul>
@@ -538,6 +549,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><a href="tklab.html" class="active">TK Lab</a></li>
       <li><a href="index.html#vision">Vision</a></li>
       <li><a href="company.html">会社概要</a></li>
+      <li><a href="policy.html">情報の取り扱い</a></li>
       <li><a href="careers.html">採用</a></li>
       <li><a href="index.html#contact" class="nav-cta">お問い合わせ</a></li>
     </ul>
@@ -547,7 +559,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ============== PAGE HERO ============== -->
 <section class="page-hero">
-  <video class="page-hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture x-webkit-airplay="deny">
+  <video class="page-hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture x-webkit-airplay="deny" poster="assets/video/posters/tklab-intro.jpg">
     <source src="assets/video/tklab-intro.mp4" type="video/mp4">
   </video>
   <div class="page-hero-inner">
@@ -569,6 +581,78 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </p>
   </div>
 </section>
+
+<!-- ============== DATA SECURITY ============== -->
+<section class="data-security" id="security" style="background:var(--ink);padding:120px 40px;position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);">
+  <div class="container" style="position:relative;z-index:2">
+    <div style="max-width:920px;margin:0 auto;text-align:center">
+      <div class="sec-eyebrow" style="color:var(--cyan-soft);justify-content:center;display:inline-flex">// DATA SECURITY</div>
+      <h2 class="sec-title" style="text-align:center;margin-top:20px">情報の保護は最優先事項</h2>
+      <p class="sec-lead" style="text-align:center;max-width:760px;margin:24px auto 48px">
+        AI活用を進めるからこそ、<strong>お客様・サプライヤー様からお預かりした情報の保護</strong>は最優先事項です。取引に関わる情報は、AIに入れる前に伏せる。この決まりを、<strong>社内で作ったアプリで仕組みにしています</strong>。
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px" class="security-grid">
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px 24px;text-align:left">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--cyan-soft);letter-spacing:.15em;margin-bottom:12px">// MASKING</div>
+          <div style="font-family:var(--jp);font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.5">AIに入れる前に<br>アプリで伏せる</div>
+          <p style="font-size:14px;line-height:1.9;color:rgba(255,255,255,.72);margin:0">社内で作ったアプリ「AI入力前チェック」が、社名・品番・注番・単価などを伏せた写しを作ります。社員が仕事の書類をAIに使うときは、このアプリで伏せた写しを使います。伏せる前の値は送らず、アプリの中に残します。</p>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px 24px;text-align:left">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--cyan-soft);letter-spacing:.15em;margin-bottom:12px">// POLICY</div>
+          <div style="font-family:var(--jp);font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.5">取引の情報は<br>外に出さない</div>
+          <p style="font-size:14px;line-height:1.9;color:rgba(255,255,255,.72);margin:0">品番・注番・単価・数量・納期など、取引を特定できる情報は、AIや外部のサービスにそのまま入れないと社内の決まりで定めています（数量・納期は、社名・品番を伏せた写しの中に限って残せます）。注文書を外部に渡すのは、契約を結んだDX-OCRの提供会社だけです。</p>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px 24px;text-align:left">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--cyan-soft);letter-spacing:.15em;margin-bottom:12px">// SETTING</div>
+          <div style="font-family:var(--jp);font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.5">学習に使わない設定<br>送った記録を残す</div>
+          <p style="font-size:14px;line-height:1.9;color:rgba(255,255,255,.72);margin:0">業務で使う生成AIは、入力した内容をモデルの学習に使わない設定で利用しています。社内アプリからAIへ送ったときは、誰が・いつ・どれだけ送ったかを記録に残します（中身は残しません）。</p>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px 24px;text-align:left">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--cyan-soft);letter-spacing:.15em;margin-bottom:12px">// EDUCATION</div>
+          <div style="font-family:var(--jp);font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.5">全員に配る決まりと<br>相談の窓口</div>
+          <p style="font-size:14px;line-height:1.9;color:rgba(255,255,255,.72);margin:0">社員向けの「AIを使うときの決まり」を全員に配り、改訂のたびに知らせています。迷ったら入れる前に相談する、出してしまったらすぐに知らせる、知らせた人を責めない、と決めています。</p>
+        </div>
+      </div>
+<style>
+  .mask-demo{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch;margin-top:40px;text-align:left}
+  .md-panel{background:#0d1526;border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:22px}
+  .md-after{border-color:rgba(0,184,212,.5)}
+  .md-label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--cyan-soft);margin-bottom:12px}
+  .md-panel p{font-size:14px;line-height:2;color:rgba(255,255,255,.85);margin:0}
+  .md-panel mark{background:rgba(201,97,46,.30);color:#fff;border-radius:4px;padding:1px 4px}
+  .md-panel mark{white-space:nowrap}
+  .md-after mark{background:rgba(0,184,212,.22);color:var(--cyan-soft);font-family:var(--mono);font-size:13px}
+  .md-arrow{align-self:center;justify-self:center;color:var(--cyan-soft);font-size:22px}
+  .md-note{grid-column:1/-1;font-size:13px;line-height:1.8;color:rgba(255,255,255,.62);margin:4px 0 0}
+  @media (max-width:880px){.mask-demo{grid-template-columns:1fr}.md-arrow{transform:rotate(90deg)}}
+</style>
+      <div class="mask-demo">
+        <div class="md-panel">
+          <div class="md-label">// BEFORE — 伏せる前（社内のPCの中だけ）</div>
+          <p lang="ja"><mark>見本商事株式会社</mark> 様から、注番 <mark>MS-2026-1105</mark> で、品番 <mark>XY-1001</mark> のフランジを <mark>40個</mark>、納期 <mark>2026年11月20日</mark> でいただいています。単価は <mark>2,380円</mark> です。担当の<mark>田中</mark>様（<mark>03-0000-0000</mark>）に、納期のお返事を書きます。</p>
+        </div>
+        <div class="md-arrow" aria-hidden="true">→</div>
+        <div class="md-panel md-after">
+          <div class="md-label">// AFTER — AIに入れる写し</div>
+          <p lang="ja"><mark>【社名1】</mark> 様から、注番 <mark>【番号1】</mark> で、品番 <mark>【番号2】</mark> のフランジを <mark>【数量1】</mark>、納期 <mark>【日付1】</mark> でいただいています。単価は <mark>【金額1】</mark> です。担当の<mark>【名前1】</mark>様（<mark>【電話1】</mark>）に、納期のお返事を書きます。</p>
+        </div>
+        <p class="md-note">架空の文章を、実際の「AI入力前チェック」に通した結果です。AIに入れるのは右の写しだけです。「記号は変えずに使う」といったAIへの注意書きも、アプリが自動で付けます。AIの答えは、アプリの中で元の値に戻します。</p>
+      </div>
+      <div style="margin-top:36px">
+        <a href="policy.html" class="btn btn-ghost">情報の取り扱い方針を見る <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width:880px){
+    .security-grid{grid-template-columns:1fr!important;gap:14px!important}
+    .data-security{padding:80px 20px!important}
+    .data-security .container > div{text-align:left!important}
+    .data-security .sec-title,.data-security .sec-lead{text-align:left!important}
+  }
+</style>
 
 <!-- ============== 3 LAYERS ============== -->
 <section class="layers" id="layers">
@@ -599,7 +683,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="level">// LAYER 02 — CORE</div>
         <h3>自社内製の<br>業務システム</h3>
         <p>
-          生成AIを取り入れ、専門商社の現場に最適化されたWebアプリケーションを内製。電算室を中心に、現場の声を聞きながら作り、育てています。
+          生成AIを取り入れ、専門商社の現場に最適化されたWebアプリケーションを内製。TK Labのチームを中心に、現場の声を聞きながら作り、育てています。
         </p>
         <ul class="examples">
           <li>内示管理システム</li>
@@ -616,7 +700,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           自社で作るより外部パートナーと協業した方が早く・確実に導入できる領域は、外部の力を借ります。「内製と協業」を合理的に使い分けます。
         </p>
         <ul class="examples">
-          <li>DX-OCR（注文書データ化）</li>
+          <li>DX-OCR（注文書データ化・試運転中）</li>
           <li>基幹システムの維持・運用</li>
         </ul>
       </div>
@@ -627,10 +711,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============== APPS DETAIL ============== -->
 <section class="apps" id="apps">
   <div class="container">
-    <div class="sec-eyebrow">APPS IN PRODUCTION</div>
-    <h2 class="sec-title">運用中のWEBアプリ</h2>
+    <div class="sec-eyebrow">APPS IN USE &amp; IN TRIAL</div>
+    <h2 class="sec-title">社内で動いているWEBアプリ</h2>
     <p class="sec-lead">
-      東京管材の業務を実際に動かしているシステムを、ご紹介します。
+      東京管材の業務を実際に動かしているシステムと、試運転中の取り組みをご紹介します。
     </p>
 
     <!-- ===== APP 1: 内示管理システム ===== -->
@@ -653,7 +737,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="app-meta">
             <div class="app-meta-item">
               <div class="label">// BUILT BY</div>
-              <div class="value">電算室<br>（生成AI活用）</div>
+              <div class="value">TK Lab<br>（生成AI活用）</div>
             </div>
             <div class="app-meta-item">
               <div class="label">// USERS</div>
@@ -700,7 +784,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <rect x="232" y="82" width="130" height="80" rx="8" fill="#f8f9fa" stroke="#e9ecef"/>
                   <text x="244" y="102" font-family="system-ui" font-size="9" fill="#7c8398">今月内示総額</text>
                   <text x="244" y="130" font-family="system-ui" font-size="22" font-weight="700" fill="#1a3a8f">¥248M</text>
-                  <text x="244" y="150" font-family="system-ui" font-size="9" fill="#22c55e">▲ 12% vs LM</text>
+                  <text x="244" y="150" font-family="system-ui" font-size="9" fill="#2d8a5f">▲ 12% vs LM</text>
                 </g>
                 <g>
                   <rect x="372" y="82" width="130" height="80" rx="8" fill="#f8f9fa" stroke="#e9ecef"/>
@@ -711,14 +795,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <g>
                   <rect x="512" y="82" width="130" height="80" rx="8" fill="#f8f9fa" stroke="#e9ecef"/>
                   <text x="524" y="102" font-family="system-ui" font-size="9" fill="#7c8398">納期遵守率</text>
-                  <text x="524" y="130" font-family="system-ui" font-size="22" font-weight="700" fill="#22c55e">98.7<tspan font-size="12" fill="#7c8398"> %</tspan></text>
-                  <text x="524" y="150" font-family="system-ui" font-size="9" fill="#22c55e">▲ 0.3pt</text>
+                  <text x="524" y="130" font-family="system-ui" font-size="22" font-weight="700" fill="#2d8a5f">98.7<tspan font-size="12" fill="#7c8398"> %</tspan></text>
+                  <text x="524" y="150" font-family="system-ui" font-size="9" fill="#2d8a5f">▲ 0.3pt</text>
                 </g>
                 <g>
                   <rect x="652" y="82" width="130" height="80" rx="8" fill="#f8f9fa" stroke="#e9ecef"/>
                   <text x="664" y="102" font-family="system-ui" font-size="9" fill="#7c8398">粗利率</text>
                   <text x="664" y="130" font-family="system-ui" font-size="22" font-weight="700" fill="#0a0e1a">14.2<tspan font-size="12" fill="#7c8398"> %</tspan></text>
-                  <text x="664" y="150" font-family="system-ui" font-size="9" fill="#22c55e">▲ 0.5pt</text>
+                  <text x="664" y="150" font-family="system-ui" font-size="9" fill="#2d8a5f">▲ 0.5pt</text>
                 </g>
 
                 <!-- Chart area -->
@@ -750,7 +834,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <circle cx="676" cy="274" r="3" fill="#f59e0b"/>
                 <text x="685" y="277" font-family="system-ui" font-size="9" fill="#0a0e1a">納期遅延 2件</text>
                 <rect x="664" y="298" width="106" height="32" rx="4" fill="#f0fdf4" stroke="#bbf7d0"/>
-                <circle cx="676" cy="314" r="3" fill="#22c55e"/>
+                <circle cx="676" cy="314" r="3" fill="#2d8a5f"/>
                 <text x="685" y="317" font-family="system-ui" font-size="9" fill="#0a0e1a">新規確定 18件</text>
                 <rect x="664" y="338" width="106" height="32" rx="4" fill="#eff6ff" stroke="#bfdbfe"/>
                 <circle cx="676" cy="354" r="3" fill="#3b82f6"/>
@@ -809,7 +893,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <path d="M 86 164 L 92 158 L 98 164 M 92 158 L 92 170" stroke="#3b82f6" fill="none" stroke-width="1.5" stroke-linecap="round"/>
                 <text x="118" y="160" font-family="system-ui" font-size="11" fill="#0a0e1a" font-weight="600">sales_data_2026-04.xlsx</text>
                 <text x="118" y="178" font-family="system-ui" font-size="9" fill="#7c8398">2,847件のレコード</text>
-                <rect x="424" y="148" width="50" height="32" rx="6" fill="#22c55e"/>
+                <rect x="424" y="148" width="50" height="32" rx="6" fill="#2d8a5f"/>
                 <text x="434" y="168" font-family="system-ui" font-size="10" font-weight="600" fill="#fff">✓ OK</text>
 
                 <!-- Step 2 -->
@@ -862,7 +946,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="app-meta">
             <div class="app-meta-item">
               <div class="label">// BUILT BY</div>
-              <div class="value">電算室<br>（生成AI活用）</div>
+              <div class="value">TK Lab<br>（生成AI活用）</div>
             </div>
             <div class="app-meta-item">
               <div class="label">// USERS</div>
@@ -882,30 +966,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="app-grid">
         <div class="app-text">
           <div class="num">03</div>
-          <div class="status partner">運用中 / 外部パートナーと協業</div>
-          <h3>DX-OCR<br>注文書データ化</h3>
-          <div class="h3-sub">// PARTNERED — PAPER TO STRUCTURED DATA</div>
+          <div class="status partner">試運転中 / 外部パートナーと協業</div>
+          <h3>DX-OCR × 社内アプリ<br>注文書データ化</h3>
+          <div class="h3-sub">// PARTNERED + IN-HOUSE — PAPER TO STRUCTURED DATA</div>
           <p class="summary">
-            紙やPDFで届く注文書を、DX-OCRで瞬時にデータ化。<strong>手入力にかかっていた時間とミスをほぼゼロ</strong>にし、データ化された情報をそのまま社内システムや基幹系へ連携できる体制を構築。社内開発するより、信頼できる外部パートナーと協業する方が早く確実に導入できる領域として、合理的な判断で外部協業を選択しました。
+            紙やPDFで届く注文書を読み取り、受注の入力につなげる取り組みです。<strong>契約を結んだ外部パートナーのDX-OCRと、社内で作った読み取りアプリを組み合わせ</strong>、注文書ごとに最適な方法を試運転しています。社内のアプリは、注文書を会社の中のPCだけで読み取ります。注文書を外部に渡すのは、契約を結んだDX-OCRの提供会社だけです。
           </p>
           <ul class="app-features">
-            <li>紙・PDF・FAXの注文書をAIで自動読取</li>
-            <li>品番・数量・納期などの項目を構造化されたデータに変換</li>
-            <li>手入力にかかっていた時間とミスを大幅削減</li>
-            <li>社内システムへのデータ連携を効率化</li>
+            <li>紙・PDF・FAXの注文書を読み取り、品番・数量・納期などを項目ごとに整理</li>
+            <li>社内のアプリは、会社の中のPCだけで読み取る</li>
+            <li>注文書を外部に渡すのは、契約を結んだDX-OCRの提供会社だけ</li>
+            <li>注文書の形ごとに、合う読み取り方を見極めている</li>
           </ul>
           <div class="app-meta">
             <div class="app-meta-item">
               <div class="label">// PARTNERSHIP</div>
-              <div class="value">外部DX-OCR<br>サービス</div>
+              <div class="value">DX-OCR<br>＋社内アプリ</div>
             </div>
             <div class="app-meta-item">
               <div class="label">// USERS</div>
-              <div class="value">営業部<br>プロフィット事業部</div>
+              <div class="value">プロフィット<br>事業部（試運転）</div>
             </div>
             <div class="app-meta-item">
               <div class="label">// IMPACT</div>
-              <div class="value">手入力時間<br>を最小化</div>
+              <div class="value">目標：<br>手入力を減らす</div>
             </div>
           </div>
         </div>
@@ -1003,8 +1087,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <text x="476" y="454" font-family="monospace" font-size="9" fill="#fff">]</text>
 
-                <rect x="476" y="464" width="80" height="14" rx="7" fill="#22c55e"/>
-                <text x="492" y="475" font-family="monospace" font-size="9" font-weight="600" fill="#fff">✓ 確信度 99%</text>
+                <rect x="476" y="464" width="80" height="14" rx="7" fill="#2d8a5f"/>
+                <text x="492" y="475" font-family="monospace" font-size="9" font-weight="600" fill="#fff">✓ 読み取り結果</text>
               </svg>
             </div>
           </div>
@@ -1175,33 +1259,191 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ============== DEPARTMENT APPS ============== -->
+<style>
+  .dept-apps{background:var(--bg);padding:120px 40px}
+  .dept-apps .sec-title,.dept-apps .sec-lead{color:var(--ink)}
+  .dept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+  .dept-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 24px}
+  .dept-en{font-family:var(--mono);font-size:10px;letter-spacing:.15em;color:var(--accent);margin-bottom:6px}
+  .dept-name{font-size:12px;color:var(--ink-soft);margin-bottom:10px}
+  .dept-card h4{font-family:var(--jp);font-size:19px;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.5}
+  .dept-status{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--green);border-radius:999px;padding:4px 11px;margin-bottom:12px;line-height:1.5}
+  .dept-status.planned{background:var(--gold)}
+  .dept-card p{font-size:14px;line-height:1.9;color:var(--ink-2);margin:0}
+  .dept-note{font-size:14px;line-height:1.9;color:var(--ink-3);margin-top:24px}
+  @media (max-width:960px){.dept-grid{grid-template-columns:1fr 1fr}}
+  .dept-status.started{background:var(--accent)}
+  .dept-apps .sec-lead strong{color:var(--ink)}
+  .dept-apps .sec-eyebrow{color:var(--accent)}
+  .dept-apps .sec-eyebrow::before{background:var(--accent)}
+  .dept-apps .sec-lead a{color:var(--accent);text-decoration:underline}
+  @media (max-width:880px){.dept-apps{padding:80px 20px}}
+  @media (max-width:640px){.dept-grid{grid-template-columns:1fr}}
+</style>
+<section class="dept-apps" id="dept-apps">
+  <div class="container">
+    <div class="sec-eyebrow">APPS FOR EVERY DEPARTMENT</div>
+    <h2 class="sec-title">部署ごとに、<br>自分たちの社内アプリ</h2>
+    <p class="sec-lead">
+      TK Lab の社内アプリは、市販のソフトではなく、<strong>一人ひとりの仕事に合わせて社内で作ったもの</strong>です。作った社内アプリは28本（2026年10月時点。うち26本が使える状態）。ここでは、各部署の代表的なアプリを1本ずつご紹介します。どのアプリも会社の中のPCで動きます。外部に送るのは、<a href="policy.html">情報の取り扱い方針</a>に挙げた場合だけです。
+    </p>
+    <div class="dept-grid">
+      <div class="dept-card">
+        <div class="dept-en">// ALL STAFF</div>
+        <div class="dept-name">全社員</div>
+        <h4>AI入力前チェック</h4>
+        <span class="dept-status">運用中</span>
+        <p>社名・品番・注番・単価などを伏せた写しを作り、AIに入れる前の情報を守ります。伏せた写しはアプリから生成AIに送ることもでき、答えはアプリの中で元の値に戻します。</p>
+      </div>
+      <div class="dept-card">
+        <div class="dept-en">// GENERAL AFFAIRS</div>
+        <div class="dept-name">総務部（全社員が使う）</div>
+        <h4>勤怠の届</h4>
+        <span class="dept-status planned">運用開始予定（2026年10月）</span>
+        <p>紙で出していた有給休暇・外出・出張などの届を、画面で出せるようにします。所属長の確認・承認、総務部の処理、有給の残りの計算までを、1つのアプリで行います。</p>
+      </div>
+      <div class="dept-card">
+        <div class="dept-en">// PROFIT MANAGEMENT</div>
+        <div class="dept-name">プロフィット事業部</div>
+        <h4>輸入経費の共通処理 ほか</h4>
+        <span class="dept-status">運用中</span>
+        <p>輸入経費の請求書から、社内の処理票と詳細の別紙を作ります。売掛の照合や請求書の個別作成など、毎日・毎月の事務作業を、一つずつアプリにしています。</p>
+      </div>
+      <div class="dept-card">
+        <div class="dept-en">// SALES</div>
+        <div class="dept-name">営業部</div>
+        <h4>価格改定の支援</h4>
+        <span class="dept-status started">利用開始</span>
+        <p>電気料金のスライドや四半期ごとの価格改定、メーカー値上げの申請など、価格転嫁のための資料づくりを助けます。</p>
+      </div>
+      <div class="dept-card">
+        <div class="dept-en">// QUALITY ASSURANCE</div>
+        <div class="dept-name">品質保証室</div>
+        <h4>検査履歴書の集計</h4>
+        <span class="dept-status">運用中</span>
+        <p>検査履歴書のPDFを読み込んで集計します。現品票の写真を読み取る機能を足しています。</p>
+      </div>
+      <div class="dept-card">
+        <div class="dept-en">// LOGISTICS</div>
+        <div class="dept-name">厚木事業所（営業部と共用）</div>
+        <h4>配車最適化システム</h4>
+        <span class="dept-status">運用中</span>
+        <p>受注残・発注残・在庫をまとめて、月ごとの出荷と配車の計画を立てます。共同配送と単独便の組み合わせを比べ、運送費の動きも見える形にします。</p>
+      </div>
+    </div>
+    <p class="dept-note">このほか、各部署の数字を1つの画面で見られる管理者向けの画面も、運用に向けて準備しています。</p>
+  </div>
+</section>
+
+<!-- ============== THE CYCLE ============== -->
+<style>
+  .cycle{background:var(--ink);padding:120px 40px;position:relative;overflow:hidden}
+  .cycle .sec-title{color:#fff}
+  .cycle .sec-lead{color:rgba(255,255,255,.75)}
+  .cycle-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+  .cycle-step{background:rgba(255,255,255,.04);border:1px solid rgba(0,184,212,.25);border-radius:14px;padding:26px 22px;position:relative}
+  .cycle-num{font-family:var(--mono);font-size:11px;letter-spacing:.15em;color:var(--cyan-soft);margin-bottom:10px}
+  .cycle-step h4{font-family:var(--jp);font-size:17px;font-weight:700;color:#fff;line-height:1.5;margin-bottom:10px}
+  .cycle-step p{font-size:14px;line-height:1.9;color:rgba(255,255,255,.72);margin:0}
+  .cycle-back{font-family:var(--mono);font-size:12px;color:var(--cyan-soft);letter-spacing:.08em;line-height:1.9;border:1px dashed rgba(0,184,212,.4);border-radius:14px;padding:26px 22px;display:flex;align-items:center}
+  .cycle-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px;border-top:1px solid rgba(255,255,255,.1);padding-top:36px}
+  .cycle-stat .num{font-family:var(--display);font-size:44px;color:#fff;line-height:1}
+  .cycle-stat .unit{font-family:var(--jp);font-size:16px;margin-left:4px;color:var(--cyan-soft)}
+  .cycle-stat .label{font-size:13px;line-height:1.7;color:rgba(255,255,255,.65);margin-top:10px}
+  @media (max-width:960px){.cycle-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:880px){.cycle{padding:80px 20px}}
+  @media (max-width:640px){.cycle-grid,.cycle-stats{grid-template-columns:1fr}.cycle-stats{gap:0}.cycle-stat+.cycle-stat{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;margin-top:22px}}
+</style>
+<section class="cycle" id="cycle">
+  <div class="container">
+    <div class="sec-eyebrow" style="color:var(--cyan-soft)">// THE TK LAB CYCLE</div>
+    <h2 class="sec-title">使うほど、<br>次のアイデアが生まれる</h2>
+    <p class="sec-lead">
+      アプリを作って渡すだけでは、仕事は変わりません。<strong>作る・支える・確かめる・評価する</strong>。この流れを一つの仕組みにして、社員のアイデアが次のアプリにつながるようにしています。
+    </p>
+    <div class="cycle-grid">
+      <div class="cycle-step">
+        <div class="cycle-num">// 01</div>
+        <h4>一人ひとりに合った<br>アプリを作る</h4>
+        <p>社員が書き出した「時間のかかっている作業」から、その人の仕事に合わせたアプリを TK Lab が作ります。</p>
+      </div>
+      <div class="cycle-step">
+        <div class="cycle-num">// 02</div>
+        <h4>運用まで<br>支える</h4>
+        <p>渡して終わりにせず、入れ方・使い方の手順書を添え、使い始めるまで一緒に確かめます。使いにくいところは直します。</p>
+      </div>
+      <div class="cycle-step">
+        <div class="cycle-num">// 03</div>
+        <h4>使った記録を<br>確かめる</h4>
+        <p>記録するのは、いつ・どのアプリで・いくつ作ったか。書類の中身は記録しません。開いたのに使えていない人には、その月のうちに声をかけ、一緒に使ってみます。</p>
+      </div>
+      <div class="cycle-step">
+        <div class="cycle-num">// 04</div>
+        <h4>事務作業が<br>減る</h4>
+        <p>手で写す・見比べる・まとめるといった定型の作業を、アプリが引き受けます。</p>
+      </div>
+      <div class="cycle-step">
+        <div class="cycle-num">// 05</div>
+        <h4>生産性が<br>上がる</h4>
+        <p>空いた時間を、お客様・サプライヤー様との対話や、人にしかできない仕事に使います。</p>
+      </div>
+      <div class="cycle-step">
+        <div class="cycle-num">// 06</div>
+        <h4>取り組みが<br>評価される</h4>
+        <p>アプリを使った取り組みは、そのまま評価に反映します。見るのは、うまくできたかではなく、取り組んだかどうか。管理者も含めて、全員が同じ物差しです。自分の工夫で仕事が楽になり、それが認められる。そこから、次のアイデアが生まれます。</p>
+      </div>
+      <div class="cycle-step">
+        <div class="cycle-num">// 07</div>
+        <h4>次のアイデアが<br>出てくる</h4>
+        <p>「この作業もアプリにできそう」という提案が、社員から出てきます。AI入力前チェックの「AIに送る」機能も、社員の提案から作りました。</p>
+      </div>
+      <div class="cycle-back">// 07 → 01　出てきたアイデアから、次のアプリを作ります</div>
+    </div>
+    <div class="cycle-stats">
+      <div class="cycle-stat">
+        <div class="num">24<span class="unit">件</span></div>
+        <div class="label">社員が挙げた<br>アプリにしたい作業</div>
+      </div>
+      <div class="cycle-stat">
+        <div class="num">15<span class="unit">本</span></div>
+        <div class="label">9月下旬から新しく<br>作った・作っているアプリ</div>
+      </div>
+      <div class="cycle-stat">
+        <div class="num">238<span class="unit">件</span></div>
+        <div class="label">アプリが記録した<br>作成の件数（9/21〜10/20）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============== ELECTRONIC DEPT ============== -->
 <section class="densan" id="densan">
   <div class="container">
     <div class="densan-grid">
       <div class="densan-text">
         <div class="sec-eyebrow">DEVELOPMENT TEAM</div>
-        <h2 class="sec-title">電算室が<br>TK Labの主体です</h2>
+        <h2 class="sec-title">TK Labが<br>開発の中心です</h2>
         <p class="sec-lead">
-          東京管材の電算室は、基幹システムの維持管理を担う部署であると同時に、<strong>TK Labの主体メンバー</strong>でもあります。社員のPC管理から基幹システムの運用、クラウド化、DX-OCRの導入、RPAの構築、そして生成AIによるWebアプリ開発まで。「IT部門」と「内製開発チーム」を一つの部署が両方担っているのが、私たちの強みです。
+          TK Labは、基幹システムの維持管理を担う部署であると同時に、<strong>社内アプリを内製する開発チーム</strong>です。社員のPC管理から基幹システムの運用、クラウド化、RPAの構築、そして生成AIによるWebアプリ開発まで。「IT部門」と「内製開発チーム」を一つの部署が両方担っているのが、私たちの強みです。
         </p>
         <p class="sec-lead" style="margin-top:18px">
-          昔ながらの「電算室」という呼び名のまま、中身は現代の中小企業の中でも先進的なIT組織になっています。名前と実態のギャップが、東京管材らしさかもしれません。
+          アプリは、使う部署の社員と一緒に作ります。資料をそろえる、試してみる、使いにくいところを伝える。現場の社員の手が加わって、はじめて使える道具になります。
         </p>
         <div class="role-tags">
           <span class="role-tag">基幹システム維持管理</span>
           <span class="role-tag">PC・クラウド管理</span>
           <span class="role-tag">クラウド化検討</span>
-          <span class="role-tag">DX-OCR導入</span>
+          <span class="role-tag">注文書読み取りの試運転</span>
           <span class="role-tag">RPA構築</span>
           <span class="role-tag">生成AI Webアプリ開発</span>
         </div>
       </div>
       <div class="densan-card">
         <div class="label">// THE TEAM</div>
-        <div class="title">電算室<br>= TK Lab Core</div>
+        <div class="title">TK Lab<br>Core Team</div>
         <div class="num-display">6<span class="unit">領域</span></div>
-        <div class="desc">基幹IT運用から、AI活用、自社開発まで。一つの部署が、攻めと守りの両方を担っています。商社という規模感で、これだけの内製能力を持つ組織は希少です。</div>
+        <div class="desc">基幹IT運用から、AI活用、自社開発まで。一つの部署が、攻めと守りの両方を担っています。作った社内アプリは28本（2026年10月時点。うち26本が使える状態）。</div>
       </div>
     </div>
   </div>
@@ -1236,7 +1478,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
         </div>
         <h4>内製と協業を<br>合理的に使い分ける</h4>
-        <p>すべて内製にこだわらない。DX-OCRのように、信頼できる外部パートナーと協業する方が早く確実な領域は、潔く外注する。「内製主義」ではなく、「合理性」が判断基準です。</p>
+        <p>すべて内製にこだわらない。基幹システムの維持・運用のように、信頼できる外部パートナーと協業する方が早く確実な領域は、潔く外の力を借りる。注文書の読み取りでは、DX-OCRと社内アプリを組み合わせています。「内製主義」ではなく、「合理性」が判断基準です。</p>
       </div>
       <div class="philo-card">
         <div class="icon">
@@ -1297,43 +1539,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
   @media (max-width:880px){
     .engineering-ai{padding:80px 20px!important}
-  }
-</style>
-
-<!-- ============== DATA SECURITY ============== -->
-<section class="data-security" style="background:var(--ink);padding:120px 40px;position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);">
-  <div class="container" style="position:relative;z-index:2">
-    <div style="max-width:920px;margin:0 auto;text-align:center">
-      <div class="sec-eyebrow" style="color:var(--cyan-soft);justify-content:center;display:inline-flex">// DATA SECURITY</div>
-      <h2 class="sec-title" style="text-align:center;margin-top:20px">情報の保護は最優先事項</h2>
-      <p class="sec-lead" style="text-align:center;max-width:760px;margin:24px auto 48px">
-        AI活用を進めるからこそ、<strong>お客様・サプライヤー様からお預かりした情報の保護</strong>は最優先事項です。AIに渡してよいデータ、渡さないデータを社内で明確に区別する運用ルールを定め、社員教育を継続的に実施しています。
-      </p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px" class="security-grid">
-        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px 24px;text-align:left">
-          <div style="font-family:var(--mono);font-size:10px;color:var(--cyan-soft);letter-spacing:.15em;margin-bottom:12px">// POLICY</div>
-          <div style="font-family:var(--jp);font-size:16px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.5">明文化された<br>社内ルール</div>
-          <p style="font-size:13px;line-height:1.85;color:rgba(255,255,255,.7);margin:0">AIに渡してよいデータ、要注意なデータ、絶対に渡さないデータを社内ポリシーで明確に区別。</p>
-        </div>
-        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px 24px;text-align:left">
-          <div style="font-family:var(--mono);font-size:10px;color:var(--cyan-soft);letter-spacing:.15em;margin-bottom:12px">// CONTRACT</div>
-          <div style="font-family:var(--jp);font-size:16px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.5">学習対象外の<br>契約・設定</div>
-          <p style="font-size:13px;line-height:1.85;color:rgba(255,255,255,.7);margin:0">業務利用するAIサービスは、入力データが学習対象外となる契約・設定で運用。</p>
-        </div>
-        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px 24px;text-align:left">
-          <div style="font-family:var(--mono);font-size:10px;color:var(--cyan-soft);letter-spacing:.15em;margin-bottom:12px">// EDUCATION</div>
-          <div style="font-family:var(--jp);font-size:16px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.5">継続的な<br>社員教育</div>
-          <p style="font-size:13px;line-height:1.85;color:rgba(255,255,255,.7);margin:0">機密情報の判断基準、仮名化の手順を社員に周知。困った時の相談ルートも整備。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-  @media (max-width:880px){
-    .security-grid{grid-template-columns:1fr!important;gap:14px!important}
-    .data-security{padding:80px 20px!important}
   }
 </style>
 
@@ -1403,8 +1608,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="foot-grid">
     <div class="foot-brand">
       <div class="top">
-        <img class="brand-logo" src="assets/img/logo-shield-white.svg" alt="TOKYO KANZAI">
-        <img class="brand-logo-jp" src="assets/img/logo-jp-edomoji-white.svg" alt="東京管材株式会社">
+        <img class="brand-logo" src="assets/img/logo-shield-white.png" alt="TOKYO KANZAI">
+        <img class="brand-logo-jp" src="assets/img/logo-jp-edomoji-white.png" alt="東京管材株式会社">
       </div>
       <p>
         〒100-0011<br>
@@ -1432,6 +1637,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="company.html#history">沿革</a></li>
         <li><a href="company.html#locations">拠点</a></li>
         <li><a href="index.html#vision">VISION</a></li>
+        <li><a href="policy.html">情報の取り扱い方針</a></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -1439,7 +1645,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul>
         <li><a href="careers.html">採用情報</a></li>
         <li><a href="index.html#contact">お問い合わせ</a></li>
-        <li><a href="#">English</a></li>
+        <li><a href="en/tklab.html" hreflang="en" lang="en">English</a></li>
       </ul>
     </div>
   </div>
@@ -1519,6 +1725,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     targets.forEach(el => io.observe(el));
   })();
 
+</script>
+<script>
+// 2026-10-26: 動きを減らす設定の人には動画を止める。data-lazy-video の動画は近くまで来てから読み込む
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('video').forEach(function(v){
+    if (reduce) { v.removeAttribute('autoplay'); v.pause(); }
+  });
+  var lazy = document.querySelectorAll('video[data-lazy-video]');
+  if (reduce || !lazy.length) return;
+  var start = function(v){ v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function(){}); };
+  if (!('IntersectionObserver' in window)) { lazy.forEach(start); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting) { start(e.target); io.unobserve(e.target); } });
+  }, {rootMargin: '300px'});
+  lazy.forEach(function(v){ io.observe(v); });
+})();
 </script>
 </body>
 

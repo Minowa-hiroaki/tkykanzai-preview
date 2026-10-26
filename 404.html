@@ -60,11 +60,17 @@
     h1{font-size:22px}
   }
 </style>
+<style>
+  /* 日本語の改行（2026-10-24）: 語のまとまりで折り、最後の行に「す。」だけが残らないようにする */
+  body{word-break:auto-phrase;line-break:strict;overflow-wrap:anywhere}
+  h1,h2,h3,h4,h5,.sec-title,.page-title,.hero-title,.msg-headline,.banner-title,.vision-headline,.ceo-quote{text-wrap:balance}
+  p,li,.value,.desc,.role,.sec-lead,.page-lead,.hero-lead{text-wrap:pretty}
+</style>
 </head>
 <body>
 
 <div class="logo">
-  <a href="/"><img src="/assets/img/logo-shield-color.svg" alt="東京管材株式会社"></a>
+  <a href="/"><img src="/assets/img/logo-shield-color.png" alt="東京管材株式会社"></a>
 </div>
 
 <div class="code">404</div>

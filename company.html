@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta name="robots" content="noindex, nofollow">
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -16,6 +18,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="keywords" content="東京管材,会社概要,沿革,蓑輪宏晃,蓑輪一男,東京,千代田区,内幸町,厚木,香港,TK International,認証,ECO STAGE,1951">
 <meta name="author" content="東京管材株式会社">
 <link rel="canonical" href="https://www.tkykanzai.co.jp/company.html">
+<link rel="alternate" hreflang="ja" href="https://www.tkykanzai.co.jp/company.html">
+<link rel="alternate" hreflang="en" href="https://www.tkykanzai.co.jp/en/company.html">
+<link rel="alternate" hreflang="x-default" href="https://www.tkykanzai.co.jp/company.html">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -587,6 +592,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
 </style>
+<style>
+  /* 日本語の改行（2026-10-24）: 語のまとまりで折り、最後の行に「す。」だけが残らないようにする */
+  body{word-break:auto-phrase;line-break:strict;overflow-wrap:anywhere}
+  h1,h2,h3,h4,h5,.sec-title,.page-title,.hero-title,.msg-headline,.banner-title,.vision-headline,.ceo-quote{text-wrap:balance}
+  p,li,.value,.desc,.role,.sec-lead,.page-lead,.hero-lead{text-wrap:pretty}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -597,8 +608,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header>
   <a href="index.html" class="brand">
-    <img class="brand-logo light" src="assets/img/logo-shield-white.svg" alt="東京管材 TOKYO KANZAI">
-    <img class="brand-logo dark" src="assets/img/logo-shield-color.svg" alt="東京管材 TOKYO KANZAI">
+    <img class="brand-logo light" src="assets/img/logo-shield-white.png" alt="東京管材 TOKYO KANZAI">
+    <img class="brand-logo dark" src="assets/img/logo-shield-color.png" alt="東京管材 TOKYO KANZAI">
   </a>
   <nav>
     <ul>
@@ -607,6 +618,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><a href="tklab.html">TK Lab</a></li>
       <li><a href="index.html#vision">Vision</a></li>
       <li><a href="company.html" class="active">会社概要</a></li>
+      <li><a href="policy.html">情報の取り扱い</a></li>
       <li><a href="careers.html">採用</a></li>
       <li><a href="index.html#contact" class="nav-cta">お問い合わせ</a></li>
     </ul>
@@ -616,7 +628,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ============== PAGE HERO ============== -->
 <section class="page-hero">
-  <video class="page-hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture x-webkit-airplay="deny">
+  <video class="page-hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture x-webkit-airplay="deny" poster="assets/video/posters/atsugi-twin.jpg">
     <source src="assets/video/atsugi-twin.mp4" type="video/mp4">
   </video>
   <div class="page-hero-inner">
@@ -671,7 +683,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="info-row">
         <div class="key">年商 <span class="en">Revenue</span></div>
-        <div class="value">28億円<span class="note">2025年度実績</span></div>
+        <div class="value">29億円</div>
       </div>
       <div class="info-row">
         <div class="key">従業員数 <span class="en">Employees</span></div>
@@ -695,7 +707,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="info-row">
         <div class="key">情報セキュリティ <span class="en">Data Security</span></div>
-        <div class="value">AIを業務活用するにあたり、お預かりした情報の保護を最優先事項として、社内ポリシーで明確に運用<span class="note">学習対象外のサービスを使用 / 社員教育を継続的に実施</span></div>
+        <div class="value">AIを業務に使うにあたり、お預かりした情報の保護を最優先にしています。取引に関わる情報は、社内で作ったアプリで伏せてからAIに使います<span class="note">学習に使わない設定で利用 / 社員向けの決まりを全員に周知 / 詳しくは<a href="policy.html">情報の取り扱い方針</a></span></div>
       </div>
     </div>
   </div>
@@ -762,9 +774,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="tl-item now">
         <div class="tl-year">2026</div>
-        <div class="tl-title">TK Lab 始動 / DX-OCR 導入</div>
+        <div class="tl-title">TK Lab 始動 / AI入力前チェック 全社で利用開始</div>
         <div class="tl-text">
-          社内システム開発の取り組み「<strong>TK Lab</strong>」を始動。生成AIを取り入れた自社開発の業務システムを稼働開始。同年、外部パートナーと協業して<strong>DX-OCR</strong>を導入し、注文書のデータ化を本格的にスタート。
+          社内システム開発の取り組み「<strong>TK Lab</strong>」を始動。生成AIを取り入れた自社開発の業務システムを稼働開始。社員がAIに入れる前に情報を伏せる社内アプリ「<strong>AI入力前チェック</strong>」を、全社員が使える形にした。注文書の読み取りは、外部パートナーの<strong>DX-OCR</strong>と社内アプリを組み合わせて試運転中。
         </div>
       </div>
     </div>
@@ -799,7 +811,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="loc-card hk">
         <div class="badge">INTELLIGENT HUB</div>
         <h3>厚木事業所</h3>
-        <div class="role"><strong>物理的な調整機能(在庫・検査)とデジタルな予測機能(AI)が融合する、サプライチェーンのインテリジェント・ハブ</strong>。お客様用パレットへの詰め替え、自社独自の検査、AIによる需要予測と在庫最適化。「不良品は海を渡らせない」を、物理とデジタルの両輪で実現します。</div>
+        <div class="role"><strong>物理的な調整機能(在庫・検査)とデジタルな予測機能(AI)が融合する、サプライチェーンのインテリジェント・ハブ</strong>。お客様用パレットへの詰め替え、自社独自の検査、在庫の管理。AIによる需要予測は、これから取り組む構想です。「不良品は海を渡らせない」を、物理とデジタルの両輪で実現します。</div>
         <div class="addr">
           <span class="label">// ROLE</span>
           自社倉庫<br>
@@ -853,7 +865,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="ceo-bio">
         <div class="ceo-bio-row">
           <div class="key">// BORN</div>
-          <div class="value">1978年生まれ（47歳）</div>
+          <div class="value">1978年生まれ</div>
         </div>
         <div class="ceo-bio-row">
           <div class="key">// EDUCATION</div>
@@ -915,10 +927,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="org-card featured">
         <div class="num">// 04</div>
-        <h4>電算室</h4>
+        <h4>TK Lab</h4>
         <div class="en-name">IT / TK LAB</div>
-        <p>基幹システムの維持管理、PC・クラウドの管理、DX-OCR・RPAの導入、生成AIによるWebアプリ構築。<strong>TK Labの主体メンバー</strong>として、社内のIT革新を牽引しています。</p>
-        <div class="badge">TK Lab 中核</div>
+        <p>基幹システムの維持管理、PC・クラウドの管理、RPAの構築、生成AIによるWebアプリ構築。<strong>社内アプリを内製する開発チーム</strong>として、使う部署の社員と一緒に道具を作っています。</p>
+        <div class="badge">社内開発</div>
       </div>
 
       <div class="org-card">
@@ -990,8 +1002,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="foot-grid">
     <div class="foot-brand">
       <div class="top">
-        <img class="brand-logo" src="assets/img/logo-shield-white.svg" alt="TOKYO KANZAI">
-        <img class="brand-logo-jp" src="assets/img/logo-jp-edomoji-white.svg" alt="東京管材株式会社">
+        <img class="brand-logo" src="assets/img/logo-shield-white.png" alt="TOKYO KANZAI">
+        <img class="brand-logo-jp" src="assets/img/logo-jp-edomoji-white.png" alt="東京管材株式会社">
       </div>
       <p>
         〒100-0011<br>
@@ -1009,7 +1021,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="index.html#philosophy">事業内容</a></li>
         <li><a href="index.html#quality">品質保証</a></li>
         <li><a href="index.html#products">製品・用途</a></li>
-        <li><a href="index.html#tklab">TK Lab</a></li>
+        <li><a href="tklab.html">TK Lab</a></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -1019,6 +1031,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="#history">沿革</a></li>
         <li><a href="#locations">拠点</a></li>
         <li><a href="index.html#vision">VISION</a></li>
+        <li><a href="policy.html">情報の取り扱い方針</a></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -1026,7 +1039,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul>
         <li><a href="careers.html">採用情報</a></li>
         <li><a href="index.html#contact">お問い合わせ</a></li>
-        <li><a href="#">English</a></li>
+        <li><a href="en/company.html" hreflang="en" lang="en">English</a></li>
       </ul>
     </div>
   </div>
@@ -1118,6 +1131,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     targets.forEach(el => io.observe(el));
   })();
 
+</script>
+<script>
+// 2026-10-26: 動きを減らす設定の人には動画を止める。data-lazy-video の動画は近くまで来てから読み込む
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('video').forEach(function(v){
+    if (reduce) { v.removeAttribute('autoplay'); v.pause(); }
+  });
+  var lazy = document.querySelectorAll('video[data-lazy-video]');
+  if (reduce || !lazy.length) return;
+  var start = function(v){ v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function(){}); };
+  if (!('IntersectionObserver' in window)) { lazy.forEach(start); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting) { start(e.target); io.unobserve(e.target); } });
+  }, {rootMargin: '300px'});
+  lazy.forEach(function(v){ io.observe(v); });
+})();
 </script>
 </body>
 
